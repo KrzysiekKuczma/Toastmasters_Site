@@ -1,0 +1,51 @@
+@import 'partials/__variables.scss';
+.carousel{
+    background-color: rgb(31, 29, 29);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+     .slide {
+        position: absolute;
+        left: 0;
+        right: 0;
+        color: $slide_slogan_color;
+        animation: slideshow ease-in-out 7000ms;
+
+        .slide_slogan_container {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 37vh; 
+        }
+        .slide_slogan {
+            display: inline-block;
+            position: relative;
+            background-color: $slide_slogan_bgcolor;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 3.1rem;
+            padding: 1rem;
+            border-radius: .3rem;
+        }
+    }
+}
+
+@keyframes slideshow {
+    0% {
+        opacity: 0.7;
+        width: 105%;
+    }
+    10% {
+        opacity: 1;
+        width: 100%
+    }
+    90%{
+        opacity: 1;
+        width: 100%
+    }
+    100%{
+        opacity: 0.7;
+        width: 105%;
+    }
+}

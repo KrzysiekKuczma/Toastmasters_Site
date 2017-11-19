@@ -1,0 +1,47 @@
+.fade-appear{
+    opacity: 0.7;
+    animation: unfold ease-in-out 700ms forwards;
+}
+
+.fade-appear-active {
+    opacity: 1;
+    transition: ease-in-out 700ms;
+}
+
+.fade-enter{
+    opacity: 0.7;
+    animation: unfold ease-in-out 700ms forwards;
+}
+.fade-enter-active{
+    opacity: 1;
+    transition: ease-in-out 700ms;
+}
+
+.fade-leave{
+    opacity: 0.7;
+}
+
+.fade-leave-active{
+    animation: fold ease-in-out 700ms forwards;
+}
+
+@keyframes unfold {
+    0% {
+        opacity: 0.7;
+        width: 102%
+    }
+    100%{
+        opacity: 1;
+        width: 100%
+    }
+}
+@keyframes fold {
+    0% {
+        opacity: 1;
+        width: 100%
+    }
+    100%{
+        opacity: 0.7;
+        width: 102%
+    }
+}

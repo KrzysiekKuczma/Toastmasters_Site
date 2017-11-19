@@ -1,0 +1,179 @@
+/* IMPORTS */
+
+@import 'partials/__variables.scss';
+@import 'partials/__reset.scss';
+@import 'partials/__carousel.scss';
+@import 'partials/__SlideTransitions.scss';
+@import 'partials/__Page.scss';
+@import 'partials/__grid.scss';
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans');
+
+/* Chris CSS */
+body {
+    background-color: $website_background;
+}
+
+h1, h2, h3 {
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 1.5rem;
+	line-height: 3rem
+}
+h2 {
+	font-size: 1.2rem;
+	line-height: 2.5rem;
+}
+h3 {
+	font-size: 1rem;
+	line-height: 2.5rem
+}
+a {
+	text-decoration: none;
+}
+p {
+	line-height: 1.3rem;
+}
+
+///////////////////////////
+/* Header and Navigation */
+///////////////////////////
+
+.maincontent {
+	width: 97%;
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: left;
+}
+#content-wrapper{
+	width: 100%;
+}
+.header_background {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	background-color: $header_background;
+	overflow: visible;
+
+	.header_image {
+		position: relative;
+		display: block;
+		text-align: center;
+		padding: 0.1%;
+		img {
+			position: absolute;
+			margin: 0 auto;
+			height: 6.2rem;
+			top: 0.5rem;
+			z-index: 10;
+		}
+	}
+}
+
+.nav_active {
+	background-color: $header_active_navlink_color;
+	border-radius: 1rem 1rem 0 0;
+}
+.navbar {
+	#menu_pages {
+		float: right;
+		margin: 0;
+		
+		li {
+			display: inline-block;
+			font-size: 0.8rem;
+			text-align: center;
+			line-height: 3.8rem;
+			a {
+				display: block;
+				width: 6rem;
+				height: 3.8rem;
+				color: $header_navlink_color;
+			}
+		}
+	}
+	#menu_checkbox {
+		display:none;
+	}
+}
+@media screen and (max-width: 768px){
+	.navbar {
+		padding-top: 2rem;
+		#menu_pages {
+			display: block;
+			width: 100%;
+			transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
+			margin: 0;
+			opacity: 0;
+			li {
+				height: 0;
+				text-align: center;
+				a {
+					display: block;
+					width: 100%;
+					height: 0;
+					font-size: 0;
+					border-radius: 0;
+				}
+			}
+		}
+		
+		#menu_checkbox {
+			display: none;
+			position: absolute;
+			visibility: hidden;
+		}
+		label{
+			text-align: center;
+			position: absolute;
+			width: 1.5rem;
+			height: 1.5rem;
+			top: 1rem;
+			right: 2.5rem;
+			border: .05rem solid $header_navlink_color;
+			border-radius: .2rem;
+			padding: 0.23rem;
+		}
+		#menu_checkbox:checked ~ ul#menu_pages {
+			display: block;
+			opacity: 1;
+			padding-top: 3rem;	
+			li{
+				height: 2rem;
+				width: 100%;
+				a{
+					height: 2rem;
+					line-height: 2rem;
+					font-size: 1rem;
+				}
+			}
+		}
+		
+		.hamburger_spans{
+			display: block;
+			position: relative;
+			width: 1.2rem;
+			height: 0.125rem;
+			border-radius: .1rem;
+			margin: .29rem auto;
+			background-color: $header_navlink_color;
+		}
+		#hamburger_menu_list {
+			width: 100%;
+		}
+	}
+	.header_background	{
+		.header_image {
+			width: 100%;
+			justify-content: center;
+			height: 1.4rem;
+			padding-top: .5rem;
+			img{
+				position: relative;
+				top: 0;
+			}
+		}	
+	}
+}
+

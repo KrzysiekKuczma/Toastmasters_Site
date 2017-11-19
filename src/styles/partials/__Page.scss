@@ -1,0 +1,19 @@
+////////////////////
+/* Imported sites */
+////////////////////
+
+@import '/__variables.scss';
+
+
+.imported {
+	margin: auto;
+	max-width: 90%;
+	text-align: justify;
+}
+.main_content {
+    padding-top: 3rem;
+    
+    ul li {
+        line-height: 1.2rem;
+    }
+}
