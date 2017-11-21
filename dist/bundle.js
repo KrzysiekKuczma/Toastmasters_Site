@@ -12109,14 +12109,7 @@ class Routing extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         const api = 'http://localhost/wordpress/wp-json/wp/v2/pages/?per_page=20';
         fetch(api, {
             method: 'GET'
-        }).then(resp => resp.json()).then(e => e.map(e => e.link.split('/', 4).splice(3, 1))).then(e => {
-            let arr = [];
-            for (let i = 0; i < e.length; i++) {
-                arr.push(e[i][0]);
-            }
-            arr.sort();
-            return arr;
-        }).then(e => this.setState({
+        }).then(resp => resp.json()).then(e => e.map(e => e.slug)).then(e => this.setState({
             pages: e
         }));
     }
@@ -12134,6 +12127,7 @@ class Routing extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         this.getPages();
     }
     render() {
+        console.log(this.state);
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             null,
