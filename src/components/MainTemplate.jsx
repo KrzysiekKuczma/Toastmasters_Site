@@ -23,15 +23,7 @@ class Routing extends React.Component{
         fetch(api, {
             method: 'GET'
         }).then(resp => resp.json())
-            .then((e => e.map((e => e.link.split('/', 4).splice(3, 1)))))
-            .then(e => {
-                let arr = []
-                for (let i = 0; i < e.length; i++){
-                    arr.push(e[i][0])
-                }
-                arr.sort()
-                return arr
-            })
+            .then((e => e.map(e => e.slug)))
             .then(e => this.setState({
                 pages: e
             }))        
