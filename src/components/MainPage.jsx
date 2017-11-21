@@ -9,7 +9,7 @@ class MainPage extends React.Component {
         }
     }
     getPage() {
-        let api = 'http://toastmasters.asbiro.pl/wp-json/wp/v2/pages?slug=strona-glowna';
+        let api = 'http://localhost/wordpress/wp-json/wp/v2/pages?slug=strona-glowna';
 
         fetch(api, {
             method: 'GET'

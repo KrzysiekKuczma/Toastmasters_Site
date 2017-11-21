@@ -10,7 +10,7 @@ class Posts extends React.Component {
     }
 
     getPosts() {
-        const apiPosts = 'http://toastmasters.asbiro.pl/wp-json/wp/v2/posts'
+        const apiPosts = 'http://localhost/wordpress/wp-json/wp/v2/posts'
 
         fetch(apiPosts, {
             method: 'GET'

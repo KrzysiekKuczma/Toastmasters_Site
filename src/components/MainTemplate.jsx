@@ -19,7 +19,7 @@ class Routing extends React.Component{
         }
     }
     getPages() {
-        const api = 'http://toastmasters.asbiro.pl/wp-json/wp/v2/pages/?per_page=20';
+        const api = 'http://localhost/wordpress/wp-json/wp/v2/pages/?per_page=20';
         fetch(api, {
             method: 'GET'
         }).then(resp => resp.json())
@@ -40,7 +40,7 @@ class Routing extends React.Component{
     rendPagesRoutes(pages){
         return pages.map((e, ind) => {
             if (e != ''){
-                return <Route exact key={ind} path={`/${e}`} component={Page} />
+                return <Route key={ind} exact path={`/${e}`} component={Page} />
             } else {
                 return null
             }

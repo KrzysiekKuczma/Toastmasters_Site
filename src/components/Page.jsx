@@ -12,7 +12,7 @@ class Page extends React.Component{
     }
     getPage(path){
         path.replace('/', '')
-        let api = 'http://toastmasters.asbiro.pl/wp-json/wp/v2/pages?slug=' + path;
+        let api = 'http://localhost/wordpress/wp-json/wp/v2/pages?slug=' + path;
 
         fetch(api, {
             method: 'GET'

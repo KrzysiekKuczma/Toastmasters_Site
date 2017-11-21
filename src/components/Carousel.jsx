@@ -14,7 +14,7 @@ class Carousel extends React.Component {
         }
     }
     getPhotos() {
-        const api = "http://toastmasters.asbiro.pl/wp-json/wp/v2/media?search=carousel";
+        const api = "http://localhost/wordpress/wp-json/wp/v2/media?search=carousel";
 
         fetch(api, {
             method: 'GET'
@@ -63,9 +63,11 @@ class Carousel extends React.Component {
     render() {
         return <div>
             <div className="carousel">
-            {this.rendSlide()}
-            </div> 
-            <MainPage />
+                {this.rendSlide()}
+            </div>
+            <div className="main-content">
+             <MainPage />
+            </div>
         </div>
     }
 
