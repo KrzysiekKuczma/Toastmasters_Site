@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Redirect, NavLink, Switch } from 'react-router-dom';
+import Api from '../api';
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -11,20 +12,16 @@ class Navbar extends React.Component {
     }
 
     getNavbar() {
-        const apiNavbar = 'http://localhost/wordpress/wp-json/menus/v1/menus/top'
+        let api = new Api();
 
-        fetch(apiNavbar, {
-            method: 'GET'
-        })
-            .then(resp => resp.json())
-            .then(obj => this.setState({
+        api.navbar().then(obj => this.setState({
                 navbar: obj
             }))
     }
 
     rendNavbar(nav) {
         if (nav.length > 0) {
-            return nav.map(e => <li key={e.ID}><NavLink activeClassName="nav_active" exact to={e.url.replace('http://localhost/wordpress', '')}>{e.title}</NavLink></li>)
+            return nav.map(e => <li key={e.ID}><NavLink activeClassName="nav_active" pageid={e.ID} exact to={e.url.replace('http://localhost/wordpress', '')}>{e.title}</NavLink></li>)
         } else {
             return null
         }

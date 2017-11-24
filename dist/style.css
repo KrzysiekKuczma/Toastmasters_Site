@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans);/* IMPORTS */
-/* VARIABLES */
+/* COLORS */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -49,7 +49,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* VARIABLES */
+/* COLORS */
 .carousel {
   background-color: #0e0a0a;
   text-align: center;
@@ -122,7 +122,7 @@ table {
     opacity: 0.4; } }
 
 /* Imported sites */
-/* VARIABLES */
+/* COLORS */
 .imported {
   margin: auto;
   max-width: 90%;
@@ -255,7 +255,7 @@ p {
   position: relative;
   width: 100%;
   margin: 0 auto;
-  background-color: #7c1c2c;
+  background-color: #77212a;
   overflow: visible; }
   .header_background .header_image {
     position: relative;
