@@ -4,7 +4,7 @@ import { Route, Router } from 'react-router'
 import { HashRouter, Redirect, NavLink, Switch } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import api from 'wordpress-rest-api-oauth-1';
-import Api from '../api';
+import { Api, Request } from '../api';
 
 //Importing child Components
 import Page from './Page.jsx'
