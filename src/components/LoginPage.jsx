@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Api from '../Api'
 
 class LoginForm extends React.Component{
     constructor(props) {
@@ -15,26 +14,22 @@ class LoginForm extends React.Component{
 
     onSubmit(event){
         event.preventDefault();
-
-        const api = new Api();
+        console.log(event)
 
     }
     onChange(event){
         this.setState({[event.target.name]: [event.target.value]});
     }
-    sendRequest(){
-
-    }
     render(){
         <form onSubmit={this.onSubmit()}>
             <h1>Login</h1>
             <label htmlFor="username" />
-            <input type="text" name="username" placeholder="username" onChange={handleChange()}/>
+            <input type="text" id="username" onChange={handleChange()}/>
 
             <label htmlFor="password" />
-            <input type="password" name="password" placeholder="password"/>
+            <input type="password" id="password"/>
 
-            <input type="submit" onClick={this.sendRequest(bind(this))}>Login</input>
+            <input type="submit">Login</input>
         </form>
     }
 } 

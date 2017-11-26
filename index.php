@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+<<<<<<< HEAD
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <article class="<?php post_class(); ?>">
             <?php if (has_post_thumbnail()): ?>
@@ -12,3 +13,8 @@
 	<?php endwhile; else : ?>
         There doesn't seem to be anything here...
 	<?php endif; ?>
+=======
+	<div id="root"></div>
+
+<?php get_footer(); ?>
+>>>>>>> local_machine

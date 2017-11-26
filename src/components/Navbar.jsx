@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Redirect, NavLink, Switch } from 'react-router-dom';
-import { Api, Request } from '../api';
+import Api from '../api';
+import Request from '../request';
 
 class Navbar extends React.Component {
     constructor(props) {

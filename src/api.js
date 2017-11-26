@@ -1,12 +1,9 @@
-const baseUrl = 'http://localhost/wordpress/wp-json/wp/v2/';
-const navUrl = 'http://localhost/wordpress/wp-json/menus/v1/menus/';
+const baseUrl = "http://localhost/wordpress/wp-json/wp/v2/";
+const navUrl = "http://localhost/wordpress/wp-json/menus/v1/menus/";
 
 class Api {
+    baseUrl() {return baseUrl};
 
-    baseUrl(){
-        return baseUrl;
-    }
-    
     posts(post){
         let url = `${baseUrl}posts`;
 
@@ -36,6 +33,7 @@ class Api {
     }
 }
 
+<<<<<<< HEAD
 
 class Request {
     consumerKey(){return 'WYYcNr73O5rC'}
@@ -59,3 +57,6 @@ class Request {
 }
 
 export { Api, Request };
+=======
+export default Api;
+>>>>>>> local_machine

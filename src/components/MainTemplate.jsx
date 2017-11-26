@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Router } from 'react-router'
-import { HashRouter, Redirect, NavLink, Switch } from 'react-router-dom';
+import { HashRouter, BrowserRouter, Redirect, NavLink, Switch } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { Api, Request } from '../api';
+import Api from '../api.js';
+import Request from '../request.js';
 
 //Importing child Components
 import Page from './Page.jsx'
-import Posts from './MainPage.jsx'
+import Posts from './Posts.jsx'
 import Carousel from './Carousel.jsx'
 import Navbar from './Navbar.jsx'
 
