@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CreatePost from './CreatePost';
+import { Api, Request } from '../api';
 
 class Posts extends React.Component {
     constructor(props) {
@@ -11,11 +12,9 @@ class Posts extends React.Component {
     }
 
     getPosts() {
-        const apiPosts = 'http://localhost/wordpress/wp-json/wp/v2/posts'
+        const api = new Api()
 
-        fetch(apiPosts, {
-            method: 'GET'
-        }).then(resp => resp.json())
+        api.posts()
             .then(obj => this.setState({
                 posts: obj
             })

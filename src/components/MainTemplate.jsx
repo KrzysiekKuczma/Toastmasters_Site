@@ -19,19 +19,7 @@ class Routing extends React.Component{
         }
     }
     getPages() {
-<<<<<<< HEAD
-        const api = 'http://toastmasters.asbiro.pl/wp-json/wp/v2/pages/?per_page=20';
-        fetch(api, {
-            method: 'GET'
-        }).then(resp => resp.json())
-            .then((e => e.map(e => e.slug)))
-            .then(e => this.setState({
-                pages: e
-            }))        
-    }
-=======
         const api = new Api();
->>>>>>> local_machine
 
         api.pages().then((elements => elements.map(element => element)))
             .then(elements => this.setState({
