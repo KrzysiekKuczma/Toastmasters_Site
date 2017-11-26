@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Api, Request } from '../api';
+import CreatePost from './CreatePost.jsx';
+import Api from '../api.js';
+import Request from '../request.js';
 
 class Posts extends React.Component {
     constructor(props) {
@@ -39,7 +41,10 @@ class Posts extends React.Component {
     }
     render() {
         let posts = this.state.posts;
-        return <div className="imported">{this.rendPosts(posts)}</div>
+        return <div className="imported">
+            <CreatePost />
+            {this.rendPosts(posts)}
+        </div>
     }
 }
 

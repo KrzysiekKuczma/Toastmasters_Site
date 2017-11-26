@@ -14,7 +14,10 @@ if ( ! function_exists( 'register_menus' ) ) :
 	}
 endif;
 add_action( 'init', 'register_menus' );
-    
+
+/* ==========================================================================
+ *  Styles and Scripts
+ * ========================================================================== */
 if ( ! function_exists( 'scriptsAndStyles' ) ) :
 	function scriptsAndStyles() {
 
