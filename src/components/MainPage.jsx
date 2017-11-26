@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Api from '../api';
+import { Api, Request }from '../api';
 
 class MainPage extends React.Component {
     constructor(props) {

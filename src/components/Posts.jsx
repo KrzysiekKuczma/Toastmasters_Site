@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CreatePost from './CreatePost';
 
 class Posts extends React.Component {
     constructor(props) {
@@ -36,7 +37,11 @@ class Posts extends React.Component {
     }
     render() {
         let posts = this.state.posts;
-        return <div>{this.rendPosts(posts)}</div>
+        return <div>
+            <CreatePost />
+            {this.rendPosts(posts)}
+        </div>
+        
     }
 }
 

@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import { Route, Router } from 'react-router'
 import { HashRouter, Redirect, NavLink, Switch } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import api from 'wordpress-rest-api-oauth-1';
-import Api from '../api';
+import { Api, Request } from '../api';
 
 //Importing child Components
 import Page from './Page.jsx'
@@ -38,7 +37,7 @@ class Routing extends React.Component{
         })
     }
     componentWillMount(){
-        this.getPages()
+        this.getPages();
     }
     render(){
         return <div>
@@ -47,6 +46,7 @@ class Routing extends React.Component{
                     <HashRouter>
                         <Switch>
                             <Route exact path='/' component={Carousel} />
+                            <Route exact path='/blog' component={Posts} />
                             {this.rendPagesRoutes(this.state.pages)}
                         </Switch>
                     </HashRouter>
@@ -57,22 +57,20 @@ class Routing extends React.Component{
 }
 
 class Main extends React.Component{
+constructor(){
+    this.state = {
+        loggedIn: false
+    }
+}
+    checkLogin() {
+        const body = document.querySelector('body');
+
+        console.log(body);
+    }
+    componentWillMount(){
+        this.checkLogin()
+    }
     render(){
-        const demoApi = new api({
-            url: 'http://localhost/wordpress/wp-json/wp/v2',
-            credentials: {
-                client: {
-                    public: 'vIvkjg0fS0YH',
-                    secret: 'Lzqgp6AEjkhwJUrDMlqTb6NJl08kUWQEMdkFBjtxEWizDTgu'
-                }
-            }
-        })
-
-
-        demoApi.authorize().then(function () {
-            console.log('All API requests are now authenticated.')
-        })
-
         return <div>
             <Navbar />
             <Routing />

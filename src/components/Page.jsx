@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import Api from '../api';
+import { Api, Request } from '../api';
 
 class Page extends React.Component{
     constructor(props){

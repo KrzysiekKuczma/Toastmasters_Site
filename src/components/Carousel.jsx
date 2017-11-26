@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Slide from './Slide.jsx'
 import MainPage from './MainPage.jsx'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import Api from '../api';
+import { Api, Request } from '../api';
 
 
 class Carousel extends React.Component {
