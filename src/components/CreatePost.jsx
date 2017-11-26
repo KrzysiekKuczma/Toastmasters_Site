@@ -1,20 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-<<<<<<< HEAD
-import { Api, Request } from '../api';
-=======
 import Api from '../api.js';
 import Request from '../request.js';
->>>>>>> local_machine
 import axios from 'axios';
 import oauthSignature from 'oauth-signature';
 
 
-<<<<<<< HEAD
-class CreatePost extends React.Component{
-=======
 class CreatePost extends React.Component {
->>>>>>> local_machine
     constructor(props) {
         super(props)
         this.state = {
