@@ -10,7 +10,8 @@
     "react-router": "^4.2.0",
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "wordpress-rest-api-oauth-1": "^1.1.7"
   },
   "scripts": {
     "build": "node_modules/webpack/bin/webpack.js",
