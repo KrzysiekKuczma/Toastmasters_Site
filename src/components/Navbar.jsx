@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Redirect, NavLink, Switch } from 'react-router-dom';
+import { Api, Request } from '../api';
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -11,20 +12,16 @@ class Navbar extends React.Component {
     }
 
     getNavbar() {
-        const apiNavbar = 'http://toastmasters.asbiro.pl/wp-json/menus/v1/menus/primary-menu'
+        let api = new Api();
 
-        fetch(apiNavbar, {
-            method: 'GET'
-        })
-            .then(resp => resp.json())
-            .then(obj => this.setState({
+        api.navbar().then(obj => this.setState({
                 navbar: obj
             }))
     }
 
     rendNavbar(nav) {
         if (nav.length > 0) {
-            return nav.map(e => <li key={e.ID}><NavLink activeClassName="nav_active" exact to={e.url.replace('http://toastmasters.asbiro.pl', '')}>{e.title}</NavLink></li>)
+            return nav.map(e => <li key={e.ID}><NavLink activeClassName="nav_active" pageid={e.ID} exact to={e.url.replace('http://localhost/wordpress', '')}>{e.title}</NavLink></li>)
         } else {
             return null
         }
@@ -41,7 +38,7 @@ class Navbar extends React.Component {
             <div className="section group">
                 <header className="col span_12_of_12">
                     <div className="col span_3_of_12 header_image">
-                        <img src="http://toastmasters.asbiro.pl/wp-content/uploads/2017/11/Toastmasters-Logo-Color-PNG.png" />
+                        <img src="http://localhost/wordpress/wp-content/uploads/2017/11/Toastmasters-Logo-Color-PNG.png" />
                     </div>
 
                     {/* Navigation */}

@@ -1,42 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-
+import { Api, Request } from '../api';
 
 class Page extends React.Component{
     constructor(props){
         super(props)
         this.state={
-            pageContent: []
+            pages: []
         }
     }
-    getPage(path){
-        path.replace('/', '')
-        let api = 'http://toastmasters.asbiro.pl/wp-json/wp/v2/pages?slug=' + path;
+    getPages(path){
+        let api = new Api();
 
-        fetch(api, {
-            method: 'GET'
-        }).then(resp => resp.json())
+        api.pages(path)
         .then(e => this.setState({
-            isMounted: true,
-            pageContent: e
+            pages: e
         }))
         
     }
     rendPage(page){
-        return page.map(e=> <div key={e.id} dangerouslySetInnerHTML={{ __html: e.content.rendered }}/>)
+        return page.map(element => {
+            if (this.props.match.path === `/${element.slug}`){
+             return <div key={element.id} dangerouslySetInnerHTML={{ __html: element.content.rendered }} />
+            } else {
+                return null
+            }
+        })
     }
     componentWillMount(){
-        this.getPage(this.props.match.path)
+        this.getPages()
     } 
-
-    componentWillReceiveProps(newProps){
-        this.getPage(newProps.match.path)
-    }
-    
     render(){ 
 
-        const page = this.state.pageContent
+        const page = this.state.pages
         if (page.length > 0){
             return <ReactCSSTransitionGroup
                 transitionName="fade"

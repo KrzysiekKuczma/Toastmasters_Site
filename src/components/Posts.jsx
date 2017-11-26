@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CreatePost from './CreatePost';
 
 class Posts extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class Posts extends React.Component {
     }
 
     getPosts() {
-        const apiPosts = 'http://toastmasters.asbiro.pl/wp-json/wp/v2/posts'
+        const apiPosts = 'http://localhost/wordpress/wp-json/wp/v2/posts'
 
         fetch(apiPosts, {
             method: 'GET'
@@ -36,7 +37,11 @@ class Posts extends React.Component {
     }
     render() {
         let posts = this.state.posts;
-        return <div>{this.rendPosts(posts)}</div>
+        return <div>
+            <CreatePost />
+            {this.rendPosts(posts)}
+        </div>
+        
     }
 }
 

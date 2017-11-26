@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans);/* IMPORTS */
-/* VARIABLES */
+/* COLORS */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -49,9 +49,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* VARIABLES */
+/* COLORS */
 .carousel {
-  background-color: #1f1d1d;
+  background-color: #0e0a0a;
   text-align: center;
   overflow: hidden;
   position: relative;
@@ -79,17 +79,13 @@ table {
 
 @keyframes slideshow {
   0% {
-    opacity: 0.7;
-    width: 105%; }
+    opacity: 0.3; }
   10% {
-    opacity: 1;
-    width: 100%; }
+    opacity: 1; }
   90% {
-    opacity: 1;
-    width: 100%; }
+    opacity: 1; }
   100% {
-    opacity: 0.7;
-    width: 105%; } }
+    opacity: 0.3; } }
 
 .fade-appear {
   opacity: 0.7;
@@ -115,22 +111,18 @@ table {
 
 @keyframes unfold {
   0% {
-    opacity: 0.7;
-    width: 102%; }
+    opacity: 0.4; }
   100% {
-    opacity: 1;
-    width: 100%; } }
+    opacity: 1; } }
 
 @keyframes fold {
   0% {
-    opacity: 1;
-    width: 100%; }
+    opacity: 1; }
   100% {
-    opacity: 0.7;
-    width: 102%; } }
+    opacity: 0.4; } }
 
 /* Imported sites */
-/* VARIABLES */
+/* COLORS */
 .imported {
   margin: auto;
   max-width: 90%;
@@ -226,7 +218,7 @@ table {
 
 /* Chris CSS */
 body {
-  background-color: #e8fcff; }
+  background-color: #EFF0F4; }
 
 h1, h2, h3 {
   font-weight: 700; }
@@ -250,7 +242,7 @@ p {
   line-height: 1.3rem; }
 
 /* Header and Navigation */
-.maincontent {
+.main-content {
   width: 97%;
   max-width: 1200px;
   margin: 0 auto;
@@ -263,7 +255,7 @@ p {
   position: relative;
   width: 100%;
   margin: 0 auto;
-  background-color: #7c1c2c;
+  background-color: #77212a;
   overflow: visible; }
   .header_background .header_image {
     position: relative;

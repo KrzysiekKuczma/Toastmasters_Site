@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Slide from './Slide.jsx'
 import MainPage from './MainPage.jsx'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Api, Request } from '../api';
 
 
 class Carousel extends React.Component {
@@ -14,12 +15,9 @@ class Carousel extends React.Component {
         }
     }
     getPhotos() {
-        const api = "http://toastmasters.asbiro.pl/wp-json/wp/v2/media?search=carousel";
+       let api = new Api();
 
-        fetch(api, {
-            method: 'GET'
-        }).then(resp => resp.json())
-        .then(arr => this.setState({
+        api.carousel().then(arr => this.setState({
             ...this.state,
             photos: arr
         }))
@@ -53,7 +51,6 @@ class Carousel extends React.Component {
     componentDidUpdate(){
         if (this.state.photos.length === 0){
         } else {
-            console.log('carousel did update ' + this.state.activeIndex)
             this.changeSlide = setTimeout(this.nextSlide.bind(this), 7000)
         }
     }
@@ -63,9 +60,11 @@ class Carousel extends React.Component {
     render() {
         return <div>
             <div className="carousel">
-            {this.rendSlide()}
-            </div> 
-            <MainPage />
+                {this.rendSlide()}
+            </div>
+            <div className="main-content">
+             <MainPage />
+            </div>
         </div>
     }
 

@@ -1,25 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Api, Request }from '../api';
 
 class MainPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            page: []
+            page: {}
         }
     }
     getPage() {
-        let api = 'http://toastmasters.asbiro.pl/wp-json/wp/v2/pages?slug=strona-glowna';
-
-        fetch(api, {
-            method: 'GET'
-        }).then(resp => resp.json())
-            .then(e => this.setState({
-                page: e
-            }))
+        const mainPage = '310'
+        let api = new Api()
+        api.pages(mainPage).then(e => this.setState({page: e}))
     }
     rendPage(page) {
-        return <div dangerouslySetInnerHTML={{ __html: page[0].content.rendered }} />
+        if (page.content !== undefined){
+            return <div dangerouslySetInnerHTML={{ __html: page.content.rendered }} />
+        } else {
+            return 'loading...';
+        }
     }
     componentDidMount() {
         this.getPage()
@@ -27,12 +27,8 @@ class MainPage extends React.Component {
 
     render() {
         const page = this.state.page
-        if (page.length > 0) {
             return <div>{this.rendPage(page)}</div>
-        } else {
-            return <div>Loading...</div>
-        }
     }
 }
 
-export default MainPage
+export default MainPage;
