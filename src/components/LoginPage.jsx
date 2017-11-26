@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// Component not used (for now)
+
 class LoginForm extends React.Component{
     constructor(props) {
         super(props)

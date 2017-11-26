@@ -4,6 +4,8 @@ import { HashRouter, Redirect, NavLink, Switch } from 'react-router-dom';
 import Api from '../api';
 import Request from '../request';
 
+//Creating navbar with React Router
+
 class Navbar extends React.Component {
     constructor(props) {
         super(props)
@@ -58,8 +60,6 @@ class Navbar extends React.Component {
                                 {navbar != null ? this.rendNavbar(navbar.items) : "Loading..."}
                             </ul>
                         </HashRouter>
-
-                        {/*Hamburger menu for mobile */}
                     </nav>
                 </header>
             </div>

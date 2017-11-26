@@ -1,3 +1,5 @@
+//Basic data to send authorized request to API
+
 class Request {
     consumerKey() { return 'WYYcNr73O5rC' }
 

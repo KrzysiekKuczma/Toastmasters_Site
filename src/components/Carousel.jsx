@@ -6,6 +6,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Api from '../api.js';
 import Request from '../request.js';
 
+//Carousel Element to main page
 
 class Carousel extends React.Component {
     constructor(props){

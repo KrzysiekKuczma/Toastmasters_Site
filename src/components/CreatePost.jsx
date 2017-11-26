@@ -26,6 +26,7 @@ class CreatePost extends React.Component {
             status: "publish",
         }
 
+        //Parameters to authorization
         const requestParams = {
             oauth_consumer_key: request.consumerKey(),
             oauth_token: request.token(),
@@ -43,6 +44,8 @@ class CreatePost extends React.Component {
             request.consumerSecret()
         )
         console.log(encodedSignature);
+        
+        //Creating authorization header
         const authorizationHeader =
         'OAuth oauth_consumer_key="' + requestParams.oauth_consumer_key
         + '",oauth_token="' + requestParams.oauth_token

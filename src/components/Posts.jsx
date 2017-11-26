@@ -1,3 +1,5 @@
+//Component to listing Posts
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CreatePost from './CreatePost.jsx';

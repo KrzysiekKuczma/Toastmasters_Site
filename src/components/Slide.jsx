@@ -1,6 +1,6 @@
+// Single slide component for Carousel
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 
 
 class Slide extends React.Component {

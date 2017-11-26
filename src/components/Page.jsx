@@ -1,3 +1,5 @@
+//Component to create most of static papges from API
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';

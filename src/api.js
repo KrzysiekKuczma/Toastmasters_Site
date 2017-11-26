@@ -1,3 +1,5 @@
+// Basic urls to work with WP API
+
 const baseUrl = "http://localhost/wordpress/wp-json/wp/v2/";
 const navUrl = "http://localhost/wordpress/wp-json/menus/v1/menus/";
 
@@ -26,7 +28,7 @@ class Api {
         let url = `${navUrl}top`;
         return fetch(url).then(res => res.json());
     }
-    
+    // Get photos especialy for carousel    
     carousel(){
         let url = `${baseUrl}media?search=carousel`;
         return fetch(url).then(res => res.json());
