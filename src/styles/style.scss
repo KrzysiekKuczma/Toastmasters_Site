@@ -73,7 +73,6 @@ p {
 
 .nav_active {
 	background-color: $header_active_navlink_color;
-	border-radius: 1rem 1rem 0 0;
 }
 .navbar {
 	#menu_pages {
@@ -102,17 +101,18 @@ p {
 		padding-top: 2rem;
 		#menu_pages {
 			display: block;
-			width: 100%;
+			width: 0;
 			transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
 			margin: 0;
 			opacity: 0;
 			li {
-				height: 0;
+				height: 2rem;
 				text-align: center;
 				a {
 					display: block;
-					width: 100%;
-					height: 0;
+					width: 0;
+					height: 2rem;
+					line-height: 2rem;
 					font-size: 0;
 					border-radius: 0;
 				}
@@ -138,7 +138,8 @@ p {
 		#menu_checkbox:checked ~ ul#menu_pages {
 			display: block;
 			opacity: 1;
-			padding-top: 3rem;	
+			padding-top: 3rem;
+			width: 100%;	
 			li{
 				height: 2rem;
 				width: 100%;
@@ -146,6 +147,7 @@ p {
 					height: 2rem;
 					line-height: 2rem;
 					font-size: 1rem;
+					width: 100%;
 				}
 			}
 		}

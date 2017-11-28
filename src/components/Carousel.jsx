@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import Slide from './Slide.jsx'
 import MainPage from './MainPage.jsx'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Api from '../api.js';
 import Request from '../request.js';
 
@@ -16,13 +15,14 @@ class Carousel extends React.Component {
             photos: []
         }
     }
-    getPhotos() {
-       let api = new Api();
-
-        api.carousel().then(arr => this.setState({
-            ...this.state,
-            photos: arr
-        }))
+    getPhotos() {        
+       fetch(`${wpApiSettings.root + wpApiSettings.versionString}media?search=carousel`)
+            .then(res => res.json())
+            .then(arr => this.setState({
+                ...this.state,
+                photos: arr
+            })
+        )
     }
     rendSlide(){
         const photos = this.state.photos;

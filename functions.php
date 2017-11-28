@@ -28,10 +28,13 @@ if ( ! function_exists( 'scriptsAndStyles' ) ) :
 
 
 		// SCRIPTS
-		wp_enqueue_script('react_theme', trailingslashit
-		( get_template_directory_uri() ) . '/js/bundle.js', array(), "1.0.0", true);
+		wp_enqueue_script( 'wp-api' );
+		wp_enqueue_script('react_theme', trailingslashit( get_template_directory_uri() ) . '/js/bundle.js', array('wp-api'), "1.0.0", true);
 
-	
+		wp_localize_script('react_theme', "login", array(
+			'loggedIn' => is_user_logged_in(),
+		
+		));
 	}
 endif;	
     add_action( 'wp_enqueue_scripts', 'scriptsAndStyles' )

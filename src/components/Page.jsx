@@ -14,13 +14,12 @@ class Page extends React.Component{
         }
     }
     getPages(path){
-        let api = new Api();
-
-        api.pages(path)
-        .then(e => this.setState({
+        fetch(`${wpApiSettings.root + wpApiSettings.versionString}pages`)
+            .then(res => res.json())
+            .then(e => this.setState({
             pages: e
-        }))
-        
+            })
+        )
     }
     rendPage(page){
         return page.map(element => {
@@ -35,7 +34,6 @@ class Page extends React.Component{
         this.getPages()
     } 
     render(){ 
-
         const page = this.state.pages
         if (page.length > 0){
             return <ReactCSSTransitionGroup

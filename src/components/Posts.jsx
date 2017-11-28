@@ -15,9 +15,9 @@ class Posts extends React.Component {
     }
 
     getPosts() {
-        const api = new Api()
-
-        api.posts().then(obj => this.setState({
+        fetch(`${wpApiSettings.root + wpApiSettings.versionString}posts`)
+        .then(res => res.json())
+        .then(obj => this.setState({
                 posts: obj
             })
             )
@@ -37,14 +37,13 @@ class Posts extends React.Component {
         }
     }
 
-
     componentDidMount() {
         this.getPosts()
     }
     render() {
         let posts = this.state.posts;
         return <div className="imported">
-            <CreatePost />
+            {document.body.classList.contains('logged-in')? <CreatePost /> : null}
             {this.rendPosts(posts)}
         </div>
     }

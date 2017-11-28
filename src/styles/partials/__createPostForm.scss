@@ -1,0 +1,12 @@
+.create_post_form {
+    display: block;
+
+    .create_post_field {
+        background-color: $website_background;
+        width: 80%;
+    }
+
+    input[type="submit"] {
+
+    }
+}

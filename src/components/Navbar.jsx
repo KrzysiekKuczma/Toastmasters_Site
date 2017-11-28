@@ -15,9 +15,9 @@ class Navbar extends React.Component {
     }
 
     getNavbar() {
-        let api = new Api();
-
-        api.navbar().then(obj => this.setState({
+        fetch(`${wpApiSettings.root}menus/v1/menus/top`)
+            .then(res => res.json())
+            .then(obj => this.setState({
                 navbar: obj
             }))
     }

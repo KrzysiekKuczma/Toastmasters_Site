@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans);/* IMPORTS */
 /* COLORS */
+/* Animations */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -50,6 +51,7 @@ table {
   border-spacing: 0; }
 
 /* COLORS */
+/* Animations */
 .carousel {
   background-color: #0e0a0a;
   text-align: center;
@@ -87,6 +89,8 @@ table {
   100% {
     opacity: 0.3; } }
 
+/* COLORS */
+/* Animations */
 .fade-appear {
   opacity: 0.7;
   animation: unfold ease-in-out 700ms forwards; }
@@ -123,6 +127,7 @@ table {
 
 /* Imported sites */
 /* COLORS */
+/* Animations */
 .imported {
   margin: auto;
   max-width: 90%;
@@ -270,8 +275,7 @@ p {
       z-index: 10; }
 
 .nav_active {
-  background-color: #8d0e23;
-  border-radius: 1rem 1rem 0 0; }
+  background-color: #8d0e23; }
 
 .navbar #menu_pages {
   float: right;
@@ -295,17 +299,18 @@ p {
     padding-top: 2rem; }
     .navbar #menu_pages {
       display: block;
-      width: 100%;
+      width: 0;
       transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
       margin: 0;
       opacity: 0; }
       .navbar #menu_pages li {
-        height: 0;
+        height: 2rem;
         text-align: center; }
         .navbar #menu_pages li a {
           display: block;
-          width: 100%;
-          height: 0;
+          width: 0;
+          height: 2rem;
+          line-height: 2rem;
           font-size: 0;
           border-radius: 0; }
     .navbar #menu_checkbox {
@@ -325,14 +330,16 @@ p {
     .navbar #menu_checkbox:checked ~ ul#menu_pages {
       display: block;
       opacity: 1;
-      padding-top: 3rem; }
+      padding-top: 3rem;
+      width: 100%; }
       .navbar #menu_checkbox:checked ~ ul#menu_pages li {
         height: 2rem;
         width: 100%; }
         .navbar #menu_checkbox:checked ~ ul#menu_pages li a {
           height: 2rem;
           line-height: 2rem;
-          font-size: 1rem; }
+          font-size: 1rem;
+          width: 100%; }
     .navbar .hamburger_spans {
       display: block;
       position: relative;

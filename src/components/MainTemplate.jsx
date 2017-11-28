@@ -22,9 +22,9 @@ class Routing extends React.Component{
         }
     }
     getPages() {
-        const api = new Api();
-
-        api.pages().then((elements => elements.map(element => element)))
+        fetch(`${wpApiSettings.root + wpApiSettings.versionString}pages`)
+        .then(response => response.json())
+        .then((elements => elements.map(element => element)))
             .then(elements => this.setState({
                 pages: elements
             }))        
@@ -62,17 +62,9 @@ class Routing extends React.Component{
 class Main extends React.Component{
 constructor(props){
     super(props)
-    this.state = {
-        loggedIn: false
-    }
-}
-    checkLogin() {
-        const body = document.querySelector('body');
-
-        console.log(body);
-    }
-    componentWillMount(){
-        this.checkLogin()
+        this.state = {
+            loggedIn: false
+        }
     }
     render(){
         return <div>

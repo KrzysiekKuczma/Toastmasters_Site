@@ -12,80 +12,50 @@ class CreatePost extends React.Component {
         this.state = {
             title: '',
             content: '',
+            excerpt: ''
         }
     }
 
     onSubmit(event) {
         event.preventDefault();
-        const api = new Api();
-        const request = new Request();
-
-        let postData = {
+        const url = `${wpApiSettings.root + wpApiSettings.versionString}posts`
+        
+        let data = {
             title: this.state.title,
             content: this.state.content,
-            status: "publish",
+            excerpt: this.state.excerpt,
+            status: 'publish'
         }
-
-        //Parameters to authorization
-        const requestParams = {
-            oauth_consumer_key: request.consumerKey(),
-            oauth_token: request.token(),
-            oauth_signature_method: 'HMAC-SHA1',
-            oauth_timestamp: request.timestamp(),
-            oauth_nonce: request.generateNonce(),
-            oauth_version: '1.0'
-        }
-        console.log(requestParams);
-        const encodedSignature = oauthSignature.generate(
-            'POST',
-            api.baseUrl() + 'posts',
-            requestParams,
-            request.tokenSecret(),
-            request.consumerSecret()
-        )
-        console.log(encodedSignature);
+        console.log(data);
         
-        //Creating authorization header
-        const authorizationHeader =
-        'OAuth oauth_consumer_key="' + requestParams.oauth_consumer_key
-        + '",oauth_token="' + requestParams.oauth_token
-        + '",oauth_signature_method="' + requestParams.oauth_signature_method
-        + '",oauth_timestamp="' + requestParams.oauth_timestamp
-        + '",oauth_nonce="' + requestParams.oauth_nonce
-        + '",oauth_version="' + requestParams.oauth_version
-        + '",oauth_signature="' + encodedSignature + '"'
-        
-        console.log(authorizationHeader);
-        axios({
-            method: 'post',
-            url: api.baseUrl() + 'posts',
+        fetch(url,{
+            method: 'POST',
+            credentials: 'same-origin',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': authorizationHeader
+                'X-WP-nonce': `${wpApiSettings.nonce}`,
+                'Content-Type': 'application/json'
             },
-            data: postData
+            body: JSON.stringify(data)
         })
-            .then(res => {
-                console.log(res)
-            })
+        .then(response => response.json()).then(r => console.log(r))
     }
 
     handleChange(event) {
-        this.setState({ [event.target.name]: [event.target.value] });
+        this.setState({ [event.target.name]: event.target.value });
     }
-    sendRequest() {
-        console.log("request");
-    }
+
     render() {
-       return <form onSubmit={this.onSubmit.bind(this)}>
+       return <form className="create_post_form" onSubmit={this.onSubmit.bind(this)}>
             <label htmlFor="title" />
-            <input type="text" name="title" placeholder="Tytuł" onChange={e => this.handleChange(e)} />
+            <input className="create_post_field" type="text" name="title" placeholder="Tytuł" onChange={e => this.handleChange(e)} />
 
+            <label htmlFor="excerpt" />
+            <input className="create_post_field" type="text" id="excerpt" name="excerpt" placeholder="Krótki opis" onChange={e => this.handleChange(e)} />
+            
             <label htmlFor="content" />
-            <textarea id="content" rows="10" placeholder="Treść posta..." />
+            <textarea className="create_post_field" id="content" rows="10" name="content" placeholder="Treść posta..." onChange={e => this.handleChange(e)} />
 
-            <input type="submit" value="Stwórz Post" onClick={this.sendRequest.bind(this)} />
+            <input type="submit" value="Stwórz Post" />
         </form>
     }
 }

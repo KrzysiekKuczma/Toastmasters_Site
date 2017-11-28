@@ -11,9 +11,9 @@ class MainPage extends React.Component {
         }
     }
     getPage() {
-        const mainPage = '310'
-        let api = new Api()
-        api.pages(mainPage).then(e => this.setState({page: e}))
+        fetch(`${wpApiSettings.root + wpApiSettings.versionString}pages/310`)
+            .then(res => res.json())
+            .then(e => this.setState({page: e}))
     }
     rendPage(page) {
         if (page.content !== undefined){

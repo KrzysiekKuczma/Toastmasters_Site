@@ -1,20 +1,22 @@
+@import '__variables';
+
 .fade-appear{
     opacity: 0.7;
-    animation: unfold ease-in-out 700ms forwards;
+    animation: unfold ease-in-out $animation_unfold_duration forwards;
 }
 
 .fade-appear-active {
     opacity: 1;
-    transition: ease-in-out 700ms;
+    transition: ease-in-out $animation_unfold_duration;
 }
 
 .fade-enter{
     opacity: 0.7;
-    animation: unfold ease-in-out 700ms forwards;
+    animation: unfold ease-in-out $animation_unfold_duration forwards;
 }
 .fade-enter-active{
     opacity: 1;
-    transition: ease-in-out 700ms;
+    transition: ease-in-out $animation_unfold_duration;
 }
 
 .fade-leave{
@@ -22,7 +24,7 @@
 }
 
 .fade-leave-active{
-    animation: fold ease-in-out 700ms forwards;
+    animation: fold ease-in-out $animation_fold_duration forwards;
 }
 
 @keyframes unfold {
