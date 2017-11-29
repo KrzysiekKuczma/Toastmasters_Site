@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import Slide from './Slide.jsx'
 import MainPage from './MainPage.jsx'
-import Api from '../api.js';
-import Request from '../request.js';
 
 //Carousel Element to main page
 

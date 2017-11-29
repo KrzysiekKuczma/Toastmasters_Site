@@ -1,12 +1,35 @@
 .create_post_form {
-    display: block;
+    padding: 1rem 1rem 1rem 1rem;
+    width: 80%;
+    margin: 4rem auto 1rem auto;
+    border: 1px solid $create_post_form_frame;
+    border-radius: .5rem;
+    background-color: $create_post_form_bg;
 
     .create_post_field {
+        display: block;
+        margin: 1rem auto;
         background-color: $website_background;
-        width: 80%;
+        border: 1px solid $create_post_form_frame;
+        border-radius: .4rem;
+        height: 1.5rem;
+        width: 100%;
+        font-size: 1rem;
     }
+    #content{
+        height: 10rem;
+        resize: none;
+        
 
+    }
     input[type="submit"] {
+        border-radius: .3rem;
+        height: 2.5rem;
+        font-weight: 600;
+        border: none;
+        background-color: $slide_slogan_color;
+        color: $website_background
+        
 
     }
 }

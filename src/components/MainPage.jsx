@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Api from '../api.js';
-import Request from '../request.js';
 
 class MainPage extends React.Component {
     constructor(props) {

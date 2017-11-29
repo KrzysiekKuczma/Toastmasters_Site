@@ -1,9 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Api from '../api.js';
-import Request from '../request.js';
-import axios from 'axios';
-import oauthSignature from 'oauth-signature';
 
 
 class CreatePost extends React.Component {
@@ -37,7 +33,11 @@ class CreatePost extends React.Component {
             },
             body: JSON.stringify(data)
         })
-        .then(response => response.json()).then(r => console.log(r))
+        .then(this.setState({
+            title: '',
+            content: '',
+            excerpt: ''
+        }));
     }
 
     handleChange(event) {
@@ -45,18 +45,21 @@ class CreatePost extends React.Component {
     }
 
     render() {
-       return <form className="create_post_form" onSubmit={this.onSubmit.bind(this)}>
-            <label htmlFor="title" />
-            <input className="create_post_field" type="text" name="title" placeholder="Tytuł" onChange={e => this.handleChange(e)} />
+       return <div className="create_post_form">
+           <h2>Stwórz nowy Post</h2>
+           <form onSubmit={this.onSubmit.bind(this)}>
+               <label htmlFor="title" />
+               <input className="create_post_field" type="text" name="title" placeholder="Tytuł" onChange={e => this.handleChange(e)} />
 
-            <label htmlFor="excerpt" />
-            <input className="create_post_field" type="text" id="excerpt" name="excerpt" placeholder="Krótki opis" onChange={e => this.handleChange(e)} />
-            
-            <label htmlFor="content" />
-            <textarea className="create_post_field" id="content" rows="10" name="content" placeholder="Treść posta..." onChange={e => this.handleChange(e)} />
+               <label htmlFor="excerpt" />
+               <input className="create_post_field" type="text" id="excerpt" name="excerpt" placeholder="Krótki opis" onChange={e => this.handleChange(e)} />
 
-            <input type="submit" value="Stwórz Post" />
-        </form>
+               <label htmlFor="content" />
+               <textarea className="create_post_field" id="content" rows="10" name="content" placeholder="Treść posta..." onChange={e => this.handleChange(e)} />
+
+               <input type="submit" value="Stwórz Post" />
+           </form>
+        </div>
     }
 }
 
