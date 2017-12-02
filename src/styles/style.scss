@@ -8,6 +8,7 @@
 @import 'partials/__grid.scss';
 @import 'partials/__createPostForm.scss';
 @import 'partials/__boardPage.scss';
+@import 'partials/__PostsSideBar.scss';
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
@@ -49,7 +50,7 @@ strong {
 ///////////////////////////
 
 .main_content {
-	padding-top: 3rem;
+	padding-top: 3.5rem;
 	width: 90%;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -165,8 +166,8 @@ strong {
 		label{
 			position: fixed;
    			z-index: 101;
-			width: 1.5rem;
-			height: 1.5rem;
+			width: 2rem;
+			height: 2rem;
 			top: .7rem;
 			right: .7rem;
 			border: .05rem solid $website_background;
@@ -196,7 +197,7 @@ strong {
 			width: 1.2rem;
 			height: 0.125rem;
 			border-radius: .1rem;
-			margin: .29rem auto;
+			margin: .25rem auto;
 			background-color: $website_background;
 		}
 		#hamburger_menu_list {

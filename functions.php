@@ -31,8 +31,8 @@ if ( ! function_exists( 'scriptsAndStyles' ) ) :
 		wp_enqueue_script( 'wp-api' );
 		wp_enqueue_script('react_theme', trailingslashit( get_template_directory_uri() ) . '/js/bundle.js', array('wp-api'), "1.0.0", true);
 
-		wp_localize_script('react_theme', "login", array(
-			'loggedIn' => is_user_logged_in(),
+		wp_localize_script('react_theme', "site", array(
+			'homeUrl' => get_site_uri(),
 		
 		));
 	}

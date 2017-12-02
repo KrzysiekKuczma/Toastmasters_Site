@@ -3,14 +3,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Router } from 'react-router'
-import { HashRouter, BrowserRouter, Redirect, NavLink, Switch } from 'react-router-dom';
+import { HashRouter, BrowserRouter, Redirect, Switch } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 //Importing child Components
 import Page from './Page.jsx'
 import Posts from './Posts.jsx'
+import Post from './Post.jsx'
 import Carousel from './Carousel.jsx'
 import Navbar from './Navbar.jsx'
+import CreatePost from './CreatePost.jsx';
+import NoPage from './NoPage.jsx';
 
 class Routing extends React.Component{
     constructor(props){
@@ -47,8 +50,11 @@ class Routing extends React.Component{
                     <HashRouter>
                         <Switch>
                             <Route exact path='/' component={Carousel} />
-                            <Route exact path='/blog' component={Posts} />
+                            <Route exact path='/blog' component={Posts}/>
+                            <Route exact path='/blog/create_post' component={CreatePost} />
+                            <Route exact path='/blog/:id' component={Post} />
                             {this.rendPagesRoutes(this.state.pages)}
+                            <Route exact path='*' component={NoPage} />
                         </Switch>
                     </HashRouter>
                 </div>

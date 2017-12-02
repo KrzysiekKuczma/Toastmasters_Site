@@ -219,12 +219,15 @@ table {
     width: 100%; } }
 
 .create_post_form {
+  position: relative;
   padding: 1rem 1rem 1rem 1rem;
   width: 80%;
   margin: 4rem auto 1rem auto;
   border: 1px solid #05314d;
   border-radius: .5rem;
   background-color: #5a7c9a; }
+  .create_post_form .create_post_header {
+    color: #EFF0F4; }
   .create_post_form .create_post_field {
     display: block;
     margin: 1rem auto;
@@ -237,13 +240,32 @@ table {
   .create_post_form #content {
     height: 10rem;
     resize: none; }
-  .create_post_form input[type="submit"] {
+  .create_post_form .form_button {
+    margin: 0 2rem;
+    width: 6.25rem;
     border-radius: .3rem;
     height: 2.5rem;
     font-weight: 600;
     border: none;
     background-color: #004165;
     color: #EFF0F4; }
+  .create_post_form .cancel_post_edit {
+    display: block;
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    width: 50%;
+    border: 1px solid #05314d;
+    border-radius: .5rem;
+    background-color: #5a7c9a;
+    overflow: auto;
+    padding: 1rem; }
+    .create_post_form .cancel_post_edit .form_button {
+      width: 5rem;
+      margin: 1rem .5rem .5rem 0; }
+    .create_post_form .cancel_post_edit span {
+      display: block;
+      color: #EFF0F4; }
 
 /* COLORS */
 /* Animations and transitions*/
@@ -285,9 +307,9 @@ table {
     position: relative;
     transition: all 600ms ease-in-out;
     top: -1rem; }
-  .board_member .description_container.righth2, .board_member .description_container.righth3 {
+  .board_member .description_container.right h2, .board_member .description_container.right h3 {
     text-align: left; }
-  .board_member .description_container.lefth2, .board_member .description_container.lefth3 {
+  .board_member .description_container.left h2, .board_member .description_container.left h3 {
     text-align: right; }
   .board_member h2, .board_member h3 {
     line-height: 2rem;
@@ -308,6 +330,8 @@ table {
   .board_member .description_container {
     width: 50%; }
   .board_member:hover .description_container p.description {
+    font-size: .8rem;
+    line-height: 1rem;
     height: 15.5rem; }
   .board_member .board_member_picture {
     width: auto;
@@ -320,18 +344,38 @@ table {
     max-width: 100%; }
   .board_member .description_container {
     width: 100%; }
-    .board_member .description_container.righth2, .board_member .description_container.righth3, .board_member .description_container.lefth2, .board_member .description_container.lefth3 {
-      text-align: right;
-      opacity: 1; }
+    .board_member .description_container.right h2, .board_member .description_container.right h3, .board_member .description_container.left h2, .board_member .description_container.left h3 {
+      text-align: center; }
   .board_member .right {
     float: left; }
   .board_member h2, .board_member h3, .board_member p.description {
     width: 100%; }
   .board_member h2, .board_member h3 {
     top: 1rem; }
+  .board_member:hover h3 {
+    opacity: 1; }
   .board_member:hover .description_container p.description {
-    top: 0;
-    height: 18rem; } }
+    top: 1rem;
+    height: 11rem; } }
+
+/* COLORS */
+/* Animations and transitions*/
+.posts_list {
+  border: 2px solid #05314d; }
+  .posts_list h3 {
+    width: 100%;
+    padding: .2rem;
+    text-align: center;
+    color: #EFF0F4;
+    background-color: #05314d; }
+
+a.link_to_post {
+  display: block;
+  width: 100%;
+  margin: .5rem;
+  color: #004165; }
+  a.link_to_post:visited {
+    color: #004165; }
 
 /* Chris CSS */
 body {
@@ -365,7 +409,7 @@ strong {
 
 /* Header and Navigation */
 .main_content {
-  padding-top: 3rem;
+  padding-top: 3.5rem;
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
@@ -459,8 +503,8 @@ strong {
   .navbar label {
     position: fixed;
     z-index: 101;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     top: .7rem;
     right: .7rem;
     border: 0.05rem solid #EFF0F4;
@@ -484,7 +528,7 @@ strong {
     width: 1.2rem;
     height: 0.125rem;
     border-radius: .1rem;
-    margin: .29rem auto;
+    margin: .25rem auto;
     background-color: #EFF0F4; }
   .navbar #hamburger_menu_list {
     width: 100%; }

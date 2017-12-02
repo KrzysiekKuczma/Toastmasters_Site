@@ -1,4 +1,5 @@
 .create_post_form {
+    position: relative;
     padding: 1rem 1rem 1rem 1rem;
     width: 80%;
     margin: 4rem auto 1rem auto;
@@ -6,6 +7,9 @@
     border-radius: .5rem;
     background-color: $create_post_form_bg;
 
+    .create_post_header {
+        color: $website_background;
+    }
     .create_post_field {
         display: block;
         margin: 1rem auto;
@@ -22,7 +26,9 @@
         
 
     }
-    input[type="submit"] {
+    .form_button {
+        margin: 0 2rem;
+        width: 6.25rem;
         border-radius: .3rem;
         height: 2.5rem;
         font-weight: 600;
@@ -30,6 +36,29 @@
         background-color: $slide_slogan_color;
         color: $website_background
         
+
+    }
+
+    .cancel_post_edit {
+        display: block;
+        position: absolute;
+        top: 45%;
+        left: 25%;
+        width: 50%;
+        border: 1px solid $create_post_form_frame;
+        border-radius: .5rem;
+        background-color: $create_post_form_bg;
+        overflow: auto;
+        padding: 1rem;
+
+        .form_button {
+            width: 5rem;
+            margin: 1rem .5rem .5rem 0;
+        }
+        span{
+            display: block;
+            color: $website_background;
+        }
 
     }
 }

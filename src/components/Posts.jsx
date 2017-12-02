@@ -2,9 +2,11 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CreatePost from './CreatePost.jsx';
 import Api from '../api.js';
 import Request from '../request.js';
+import PostsSideBar from './PostsSideBar.jsx'
+import { HashRouter } from 'react-router-dom';
+
 
 class Posts extends React.Component {
     constructor(props) {
@@ -36,15 +38,26 @@ class Posts extends React.Component {
             return null
         }
     }
-
+    createPostButton(){
+        return (
+            <button className="create_post_button" onClick={() => this.props.history.push('/blog/create_post')}>
+                Stwórz nowy post
+            </button>
+        )
+    }
     componentDidMount() {
         this.getPosts()
     }
     render() {
         let posts = this.state.posts;
-        return <div className="imported">
-            {document.body.classList.contains('logged-in')? <CreatePost /> : null}
-            {this.rendPosts(posts)}
+        return <div className="main_content">
+            <div className="col span_8_of_12">
+            {document.body.classList.contains('logged-in')? this.createPostButton() : null}
+                {this.rendPosts(posts)}
+            </div>
+            <div className="col span_4_of_12">
+                <PostsSideBar />
+            </div>
         </div>
     }
 }

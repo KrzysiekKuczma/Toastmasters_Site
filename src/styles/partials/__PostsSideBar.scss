@@ -1,0 +1,24 @@
+@import './__variables.scss';
+
+.posts_list {
+    border: 2px solid $create_post_form_frame;
+   
+    h3 {
+        width: 100%;
+        padding: .2rem;
+        text-align: center;
+        color: $website_background;
+        background-color: $create_post_form_frame;
+    }
+}
+
+a.link_to_post {
+    display: block;
+    width: 100%;
+    margin: .5rem;
+    color: $posts_link_color;
+
+    &:visited {
+        color: $posts_link_color;
+    }
+}

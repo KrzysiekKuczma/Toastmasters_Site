@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, Redirect, NavLink, Switch } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Redirect, NavLink, Switch } from 'react-router-dom';
 import Api from '../api';
 import Request from '../request';
 
@@ -24,7 +24,7 @@ class Navbar extends React.Component {
 
     rendNavbar(nav) {
         if (nav.length > 0) {
-            return nav.map(e => <li key={e.ID}><NavLink activeClassName="nav_active" pageid={e.ID} exact to={e.url.replace('http://localhost/wordpress', '')}>{e.title}</NavLink></li>)
+            return nav.map(e => <li key={e.ID}><NavLink activeClassName="nav_active" pageid={e.ID} exact to={`${e.url.replace(site.homeUrl, '')}`}>{e.title}</NavLink></li>)
         } else {
             return null
         }
