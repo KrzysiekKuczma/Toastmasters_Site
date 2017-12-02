@@ -1,0 +1,132 @@
+@import "./__variables.scss";
+
+.board_member{
+    margin: 0.5rem auto;
+    position: relative;
+    text-align: center;
+
+    .board_member_picture{
+        height: 12.5rem;
+        display: inline-block;
+        float: left;
+    }
+    .left {
+        float: left;
+        left: 0;
+    }
+    .right {
+        float: right;
+        right: 0;
+    }
+    p {
+        display:inline;
+        width: 0;
+    }
+    .description_container {
+        display: inline-block;
+        width: 61%;
+    }
+    p.description {
+        width: 100%;
+        text-align: justify;
+        height: 0;
+        opacity: 0;
+        background-color: $website-background;
+        z-index: -10;
+        overflow: hidden;
+    }
+    
+    &:hover p.description{
+        opacity: 1;
+        z-index: 10;
+        height: 12.5rem;
+    }
+    
+    h2, h3, p.description{
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        transition: $board_description_transition;
+        top: -1rem;
+    }
+    .description_container {
+        &.right {
+            &h2, &h3 {
+                text-align: left;
+            }
+        }
+        &.left {
+            &h2, &h3 {
+                text-align: right;
+            }
+        }
+    }
+    h2, h3 {
+        line-height: 2rem;
+        top: 3rem;
+        opacity: 1;
+    }
+    &:hover h2, {
+        top: 0;
+    }
+    &:hover h3{
+        opacity: 0;
+    }
+    h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .board_member{
+        .description_container{
+            width: 50%;
+        }
+        &:hover .description_container p.description {
+            height: 15.5rem;
+        }
+        .board_member_picture{
+            width: auto;
+            max-width: 50%;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .board_member{
+        .board_member_picture{
+            height: auto;
+            width: 100%;
+            max-width: 100%;
+        }
+        .description_container {
+            width: 100%;
+
+            &.right, &.left  {
+                &h2, &h3 {
+                    text-align: right;
+                    opacity: 1;
+                }
+            }
+        }
+        
+        .right {
+            float: left;
+        }
+        h2, h3, p.description{
+            width: 100%;
+        }
+        h2, h3 {
+            top: 1rem;
+        }
+        &:hover .description_container p.description {
+            top: 0;
+            height: 18rem;
+        }
+    }
+}

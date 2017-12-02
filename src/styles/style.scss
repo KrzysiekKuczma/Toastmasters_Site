@@ -7,6 +7,7 @@
 @import 'partials/__Page.scss';
 @import 'partials/__grid.scss';
 @import 'partials/__createPostForm.scss';
+@import 'partials/__boardPage.scss';
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
@@ -38,6 +39,10 @@ a {
 p {
 	line-height: 1.3rem;
 }
+strong {
+	font-weight: 600;
+	color: $strong_color;
+}
 
 ///////////////////////////
 /* Header and Navigation */
@@ -55,11 +60,14 @@ p {
 
 		li {
 			padding-left: 0.5rem;
+			margin-bottom: .5rem;
 
 		}
 		li:before {
 			content: "\f055"; /* FontAwesome Unicode */
 			font-family: FontAwesome;
+			font-size: .7rem;
+			line-height: 0.7rem;
 			display: inline-block;
 			margin-left: -1.5rem; /* same as padding-left set on li */
 			width: 1.5em; /* same as padding-left set on li */
@@ -125,7 +133,9 @@ p {
 
 		#menu_pages {
 			display: block;
-			transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
+			max-height: 0;
+			overflow: hidden;
+			transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
 			margin: 0;
 			opacity: 0;
 			z-index: 100;
@@ -168,6 +178,7 @@ p {
 		}
 		#menu_checkbox:checked ~ ul#menu_pages {
 			opacity: 1;
+			max-height: 30rem;
 			padding-top: 3rem;
 			width: 100%;
 			background-color: $header_background;

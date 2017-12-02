@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans);@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);/* IMPORTS */
 /* COLORS */
-/* Animations */
+/* Animations and transitions*/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -23,7 +23,8 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+  box-sizing: border-box; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -31,6 +32,7 @@ footer, header, hgroup, menu, nav, section {
   display: block; }
 
 body {
+  box-sizing: border-box;
   line-height: 1;
   font-family: 'Noto Sans', sans-serif;
   text-align: center; }
@@ -51,7 +53,7 @@ table {
   border-spacing: 0; }
 
 /* COLORS */
-/* Animations */
+/* Animations and transitions*/
 .carousel {
   background-color: #0e0a0a;
   text-align: center;
@@ -90,7 +92,7 @@ table {
     opacity: 0.3; } }
 
 /* COLORS */
-/* Animations */
+/* Animations and transitions*/
 .fade-appear {
   opacity: 0.7;
   animation: unfold ease-in-out 700ms forwards; }
@@ -127,7 +129,7 @@ table {
 
 /* Imported sites */
 /* COLORS */
-/* Animations */
+/* Animations and transitions*/
 .imported {
   margin: auto;
   max-width: 90%;
@@ -211,9 +213,9 @@ table {
     margin: 0; }
   .span_1_of_12, .span_2_of_12 {
     width: 33.33333%; }
-  .span_3_of_12, .span_4_of_12 {
+  .span_3_of_12 {
     width: 50%; }
-  .span_5_of_12, .span_6_of_12, .span_7_of_12, .span_8_of_12, .span_9_of_12, .span_10_of_12, .span_11_of_12, .span_12_of_12 {
+  .span_4_of_12, .span_5_of_12, .span_6_of_12, .span_7_of_12, .span_8_of_12, .span_9_of_12, .span_10_of_12, .span_11_of_12, .span_12_of_12 {
     width: 100%; } }
 
 .create_post_form {
@@ -243,6 +245,94 @@ table {
     background-color: #004165;
     color: #EFF0F4; }
 
+/* COLORS */
+/* Animations and transitions*/
+.board_member {
+  margin: 0.5rem auto;
+  position: relative;
+  text-align: center; }
+  .board_member .board_member_picture {
+    height: 12.5rem;
+    display: inline-block;
+    float: left; }
+  .board_member .left {
+    float: left;
+    left: 0; }
+  .board_member .right {
+    float: right;
+    right: 0; }
+  .board_member p {
+    display: inline;
+    width: 0; }
+  .board_member .description_container {
+    display: inline-block;
+    width: 61%; }
+  .board_member p.description {
+    width: 100%;
+    text-align: justify;
+    height: 0;
+    opacity: 0;
+    background-color: #EFF0F4;
+    z-index: -10;
+    overflow: hidden; }
+  .board_member:hover p.description {
+    opacity: 1;
+    z-index: 10;
+    height: 12.5rem; }
+  .board_member h2, .board_member h3, .board_member p.description {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    transition: all 600ms ease-in-out;
+    top: -1rem; }
+  .board_member .description_container.righth2, .board_member .description_container.righth3 {
+    text-align: left; }
+  .board_member .description_container.lefth2, .board_member .description_container.lefth3 {
+    text-align: right; }
+  .board_member h2, .board_member h3 {
+    line-height: 2rem;
+    top: 3rem;
+    opacity: 1; }
+  .board_member:hover h2 {
+    top: 0; }
+  .board_member:hover h3 {
+    opacity: 0; }
+  .board_member h2 {
+    font-size: 1.6rem;
+    font-weight: 700; }
+  .board_member h3 {
+    font-size: 1.2rem;
+    font-weight: 400; }
+
+@media only screen and (max-width: 768px) {
+  .board_member .description_container {
+    width: 50%; }
+  .board_member:hover .description_container p.description {
+    height: 15.5rem; }
+  .board_member .board_member_picture {
+    width: auto;
+    max-width: 50%; } }
+
+@media only screen and (max-width: 480px) {
+  .board_member .board_member_picture {
+    height: auto;
+    width: 100%;
+    max-width: 100%; }
+  .board_member .description_container {
+    width: 100%; }
+    .board_member .description_container.righth2, .board_member .description_container.righth3, .board_member .description_container.lefth2, .board_member .description_container.lefth3 {
+      text-align: right;
+      opacity: 1; }
+  .board_member .right {
+    float: left; }
+  .board_member h2, .board_member h3, .board_member p.description {
+    width: 100%; }
+  .board_member h2, .board_member h3 {
+    top: 1rem; }
+  .board_member:hover .description_container p.description {
+    top: 0;
+    height: 18rem; } }
+
 /* Chris CSS */
 body {
   background-color: #EFF0F4; }
@@ -269,6 +359,10 @@ a {
 p {
   line-height: 1.3rem; }
 
+strong {
+  font-weight: 600;
+  color: #004165; }
+
 /* Header and Navigation */
 .main_content {
   padding-top: 3rem;
@@ -278,11 +372,14 @@ p {
   text-align: left;
   line-height: 1.2rem; }
   .main_content ul li {
-    padding-left: 0.5rem; }
+    padding-left: 0.5rem;
+    margin-bottom: .5rem; }
   .main_content ul li:before {
     content: "\F055";
     /* FontAwesome Unicode */
     font-family: FontAwesome;
+    font-size: .7rem;
+    line-height: 0.7rem;
     display: inline-block;
     margin-left: -1.5rem;
     /* same as padding-left set on li */
@@ -336,7 +433,9 @@ p {
     height: 8.5vh; }
   .navbar #menu_pages {
     display: block;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
+    max-height: 0;
+    overflow: hidden;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
     margin: 0;
     opacity: 0;
     z-index: 100;
@@ -371,6 +470,7 @@ p {
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s; }
   .navbar #menu_checkbox:checked ~ ul#menu_pages {
     opacity: 1;
+    max-height: 30rem;
     padding-top: 3rem;
     width: 100%;
     background-color: #772432;

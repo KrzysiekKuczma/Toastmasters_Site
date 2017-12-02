@@ -8,8 +8,9 @@ $slide_slogan_shadow: #A9B2B1;
 $slide_slogan_bgcolor: rgba(255, 255, 255, 0.63);
 $create_post_form_bg: #5a7c9a;
 $create_post_form_frame: #05314d;
+$strong_color: #004165;
 
-/* Animations */
-
+/* Animations and transitions*/
+$board_description_transition: all 600ms ease-in-out; 
 $animation_fold_duration: 700ms;
 $animation_unfold_duration: 700ms;
