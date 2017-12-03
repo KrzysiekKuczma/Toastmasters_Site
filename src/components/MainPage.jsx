@@ -9,7 +9,7 @@ class MainPage extends React.Component {
         }
     }
     getPage() {
-        fetch(`${wpApiSettings.root + wpApiSettings.versionString}pages/310`)
+        fetch(`${wpApiSettings.root + wpApiSettings.versionString}frontpage`)
             .then(res => res.json())
             .then(e => this.setState({page: e}))
     }
@@ -26,7 +26,7 @@ class MainPage extends React.Component {
 
     render() {
         const page = this.state.page
-            return <div>{this.rendPage(page)}</div>
+            return <div className="main_content" style={{marginTop: "3.5rem"}}>{this.rendPage(page)}</div>
     }
 }
 

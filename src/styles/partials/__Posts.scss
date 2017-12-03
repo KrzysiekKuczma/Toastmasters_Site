@@ -1,0 +1,40 @@
+
+.button {
+        margin: 0 2rem;
+        width: 6.25rem;
+        border-radius: .3rem;
+        height: 2.5rem;
+        font-weight: 600;
+        border: none;
+        background-color: $slide_slogan_color;
+        color: $website_background
+    }
+.create_post_button{ 
+    @extend .button;
+
+    width: 50%;
+    margin: 0 auto;
+}
+
+.recent_posts {
+    padding-left: 1.5rem;
+
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+    .post{
+        margin-bottom: 2rem;
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 768px){
+   .recent_posts {
+    padding: 0;
+    } 
+    .create_post_button {
+        width: 75%;
+        margin: 1rem auto;
+    }
+}

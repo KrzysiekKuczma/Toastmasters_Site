@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Post extends React.Component{
     constructor(props){
@@ -23,10 +24,17 @@ class Post extends React.Component{
     render(){
         console.log(this.state);
         if(this.state.post !== null){
-            return <div className="main_content">
-                <h1>{this.state.post.title.rendered}</h1>
-                <div className="post_content" dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} />
-            </div>
+            return <ReactCSSTransitionGroup
+                transitionName="fade"
+                transitionAppear={true}
+                transitionAppearTimeout={500}
+                transitionLeaveTimeout={500}
+                transitionEnterTimeout={500}> 
+                    <div className="main_content">
+                        <h1>{this.state.post.title.rendered}</h1>
+                        <div className="post_content" dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} />
+                    </div>
+            </ReactCSSTransitionGroup>
         } else {
             return <div>Loading...</div>
         }

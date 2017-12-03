@@ -2,6 +2,7 @@
 
 .posts_list {
     border: 2px solid $create_post_form_frame;
+    border-radius: .3rem;
    
     h3 {
         width: 100%;
@@ -14,7 +15,6 @@
 
 a.link_to_post {
     display: block;
-    width: 100%;
     margin: .5rem;
     color: $posts_link_color;
 

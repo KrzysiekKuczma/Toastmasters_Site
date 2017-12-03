@@ -5,6 +5,7 @@ class CreatePost extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            alert: false,
             cancel: false,
             title: '',
             content: '',
@@ -32,19 +33,29 @@ class CreatePost extends React.Component {
             },
             body: JSON.stringify(data)
         })
-        .then(this.setState({
-            title: '',
-            content: '',
-            excerpt: ''
-        })).then(() => this.props.history.push('/blog'))
+        .then(response => {
+            if(response.ok){
+                this.props.history.push('/blog');
+            } else {
+                this.setState({alert:true})
+            }
+        })
+        // .then(() => this.props.history.push('/blog'))
     }
-
+    alert(){
+        if (this.state.alert) {
+            return <div className="cancel_post_edit">
+                <span>Musisz wypełnić wszystkie pola!</span>
+                <button className="button" onClick={() => this.setState({ alert: false })}>OK</button>
+            </div>
+        }
+    }
     confirmation(){
         if(this.state.cancel){
             return <div className="cancel_post_edit">
                 <span>Czy na pewno chcesz anulować?</span>
-                <button className="form_button" onClick={() => this.props.history.push('/blog')}>TAK</button>
-                <button className="form_button" onClick={() => this.setState({cancel: false})}>NIE</button>
+                <button className="button" onClick={() => this.props.history.push('/blog')}>TAK</button>
+                <button className="button" onClick={() => this.setState({cancel: false})}>NIE</button>
             </div>
         }
     }
@@ -65,10 +76,11 @@ class CreatePost extends React.Component {
                <label htmlFor="content" />
                <textarea className="create_post_field" id="content" rows="10" name="content" placeholder="Treść posta..." onChange={e => this.handleChange(e)} />
 
-               <input className="form_button" type="submit" value="Stwórz Post" />
-               <input className="form_button" type="button" value="Anuluj" onClick={() => this.setState({cancel: true})}/>
+               <input className="button" type="submit" value="Stwórz Post" />
+               <input className="button" type="button" value="Anuluj" onClick={() => this.setState({cancel: true})}/>
            </form>
            {this.confirmation()}
+           {this.alert()}
         </div>
     }
 }

@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, HashRouter, Redirect, NavLink, Switch } from 'react-router-dom';
-import Api from '../api';
-import Request from '../request';
 
 //Creating navbar with React Router
 

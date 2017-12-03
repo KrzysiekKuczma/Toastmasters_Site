@@ -9,6 +9,7 @@
 @import 'partials/__createPostForm.scss';
 @import 'partials/__boardPage.scss';
 @import 'partials/__PostsSideBar.scss';
+@import 'partials/__Posts.scss';
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
@@ -50,10 +51,9 @@ strong {
 ///////////////////////////
 
 .main_content {
-	padding-top: 3.5rem;
 	width: 90%;
 	max-width: 1200px;
-	margin: 0 auto;
+	margin: 7.5rem auto 3rem auto;
 	text-align: left;
 	line-height: 1.2rem;
 	
@@ -75,15 +75,13 @@ strong {
 		}
 	}
 }
-#content_wrapper{
-	width: 100%;
-}
 .header_background {
-	position: relative;
+	position: fixed;
 	width: 100%;
 	margin: 0 auto;
 	background-color: $header_background;
 	overflow: visible;
+	z-index: 5;
 
 	.header_image {
 		position: relative;
@@ -126,9 +124,9 @@ strong {
 	}
 }
 @media screen and (max-width: 768px){
-	header{
+	.header_background{
 		position: relative;
-   		height: 8.5vh;
+   		height: 4rem;
 	}
 	.navbar {
 
@@ -168,8 +166,8 @@ strong {
    			z-index: 101;
 			width: 2rem;
 			height: 2rem;
-			top: .7rem;
-			right: .7rem;
+			top: 1rem;
+			right: 1rem;
 			border: .05rem solid $website_background;
 			border-radius: .2rem;
 			padding: 0.23rem;
@@ -217,4 +215,3 @@ strong {
 		}	
 	}
 }
-

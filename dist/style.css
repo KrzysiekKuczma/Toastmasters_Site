@@ -59,7 +59,8 @@ table {
   text-align: center;
   overflow: hidden;
   position: relative;
-  height: 100vh; }
+  height: 100vh;
+  margin-top: 3rem; }
   .carousel .slide {
     position: absolute;
     left: 0;
@@ -91,11 +92,23 @@ table {
   100% {
     opacity: 0.3; } }
 
+@media only screen and (max-width: 768px) {
+  .carousel .slide .slide_slogan {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    padding: .5rem; } }
+
+@media only screen and (max-width: 480px) {
+  .carousel .slide .slide_slogan {
+    font-size: 2rem;
+    line-height: 2rem;
+    padding: .5rem; } }
+
 /* COLORS */
 /* Animations and transitions*/
 .fade-appear {
   opacity: 0.7;
-  animation: unfold ease-in-out 700ms forwards; }
+  animation: fade-in ease-in-out 700ms forwards; }
 
 .fade-appear-active {
   opacity: 1;
@@ -103,7 +116,7 @@ table {
 
 .fade-enter {
   opacity: 0.7;
-  animation: unfold ease-in-out 700ms forwards; }
+  animation: fade-in ease-in-out 700ms forwards; }
 
 .fade-enter-active {
   opacity: 1;
@@ -113,15 +126,15 @@ table {
   opacity: 0.7; }
 
 .fade-leave-active {
-  animation: fold ease-in-out 700ms forwards; }
+  animation: fade-out ease-in-out 700ms forwards; }
 
-@keyframes unfold {
+@keyframes fade-in {
   0% {
     opacity: 0.4; }
   100% {
     opacity: 1; } }
 
-@keyframes fold {
+@keyframes fade-out {
   0% {
     opacity: 1; }
   100% {
@@ -240,15 +253,6 @@ table {
   .create_post_form #content {
     height: 10rem;
     resize: none; }
-  .create_post_form .form_button {
-    margin: 0 2rem;
-    width: 6.25rem;
-    border-radius: .3rem;
-    height: 2.5rem;
-    font-weight: 600;
-    border: none;
-    background-color: #004165;
-    color: #EFF0F4; }
   .create_post_form .cancel_post_edit {
     display: block;
     position: absolute;
@@ -260,12 +264,17 @@ table {
     background-color: #5a7c9a;
     overflow: auto;
     padding: 1rem; }
-    .create_post_form .cancel_post_edit .form_button {
-      width: 5rem;
-      margin: 1rem .5rem .5rem 0; }
     .create_post_form .cancel_post_edit span {
       display: block;
       color: #EFF0F4; }
+
+@media only screen and (max-width: 480px) {
+  .create_post_form .cancel_post_edit {
+    padding: .2rem;
+    width: 75%;
+    left: 13.5%; }
+  .create_post_form .button, .create_post_form .create_post_button {
+    margin: .1rem; } }
 
 /* COLORS */
 /* Animations and transitions*/
@@ -361,7 +370,8 @@ table {
 /* COLORS */
 /* Animations and transitions*/
 .posts_list {
-  border: 2px solid #05314d; }
+  border: 2px solid #05314d;
+  border-radius: .3rem; }
   .posts_list h3 {
     width: 100%;
     padding: .2rem;
@@ -371,11 +381,40 @@ table {
 
 a.link_to_post {
   display: block;
-  width: 100%;
   margin: .5rem;
   color: #004165; }
   a.link_to_post:visited {
     color: #004165; }
+
+.button, .create_post_button {
+  margin: 0 2rem;
+  width: 6.25rem;
+  border-radius: .3rem;
+  height: 2.5rem;
+  font-weight: 600;
+  border: none;
+  background-color: #004165;
+  color: #EFF0F4; }
+
+.create_post_button {
+  width: 50%;
+  margin: 0 auto; }
+
+.recent_posts {
+  padding-left: 1.5rem; }
+  .recent_posts img {
+    max-width: 100%;
+    height: auto; }
+  .recent_posts .post {
+    margin-bottom: 2rem;
+    text-align: justify; }
+
+@media screen and (max-width: 768px) {
+  .recent_posts {
+    padding: 0; }
+  .create_post_button {
+    width: 75%;
+    margin: 1rem auto; } }
 
 /* Chris CSS */
 body {
@@ -409,10 +448,9 @@ strong {
 
 /* Header and Navigation */
 .main_content {
-  padding-top: 3.5rem;
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 7.5rem auto 3rem auto;
   text-align: left;
   line-height: 1.2rem; }
   .main_content ul li {
@@ -430,15 +468,13 @@ strong {
     width: 1.5em;
     /* same as padding-left set on li */ }
 
-#content_wrapper {
-  width: 100%; }
-
 .header_background {
-  position: relative;
+  position: fixed;
   width: 100%;
   margin: 0 auto;
   background-color: #772432;
-  overflow: visible; }
+  overflow: visible;
+  z-index: 5; }
   .header_background .header_image {
     position: relative;
     display: block;
@@ -472,9 +508,9 @@ strong {
   display: none; }
 
 @media screen and (max-width: 768px) {
-  header {
+  .header_background {
     position: relative;
-    height: 8.5vh; }
+    height: 4rem; }
   .navbar #menu_pages {
     display: block;
     max-height: 0;
@@ -505,8 +541,8 @@ strong {
     z-index: 101;
     width: 2rem;
     height: 2rem;
-    top: .7rem;
-    right: .7rem;
+    top: 1rem;
+    right: 1rem;
     border: 0.05rem solid #EFF0F4;
     border-radius: .2rem;
     padding: 0.23rem;
