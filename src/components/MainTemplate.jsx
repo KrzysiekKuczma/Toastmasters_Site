@@ -52,7 +52,7 @@ class Routing extends React.Component{
                             <Route exact path='/' component={Carousel} />
                             <Route exact path='/blog' component={Posts}/>
                             <Route exact path='/blog/create_post' component={CreatePost} />
-                            <Route exact path='/blog/:id' component={Post} />
+                            <Route path='/blog/:id' component={Post} />
                             {this.rendPagesRoutes(this.state.pages)}
                             <Route exact path='*' component={NoPage} />
                         </Switch>

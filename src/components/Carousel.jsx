@@ -58,7 +58,6 @@ class Carousel extends React.Component {
         clearTimeout(this.changeSlide)
     }
     render() {
-        console.log(this.props)
         return <div>
             <div className="carousel">
                 {this.rendSlide()}

@@ -8,7 +8,8 @@ class Navbar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            navbar: null
+            navbar: null,
+            logo: null
         }
     }
 
@@ -19,7 +20,13 @@ class Navbar extends React.Component {
                 navbar: obj
             }))
     }
-
+    getLogo(){
+        fetch(`${wpApiSettings.root}wp/v2/media?search=main_logo`)
+            .then(res => res.json())
+            .then(obj => this.setState({
+                logo: obj[0]
+            }))
+    }
     rendNavbar(nav) {
         if (nav.length > 0) {
             return nav.map(e => <li key={e.ID}><NavLink activeClassName="nav_active" pageid={e.ID} exact to={`${e.url.replace(site.homeUrl, '')}`}>{e.title}</NavLink></li>)
@@ -30,16 +37,18 @@ class Navbar extends React.Component {
 
     componentWillMount() {
         this.getNavbar()
+        this.getLogo()
     }
 
     render() {
+        const logo = this.state.logo;
+        console.log(logo);
         const navbar = this.state.navbar
-
         return < div className="header_background" >
             <div className="section group">
                 <header className="col span_12_of_12">
                     <div className="col span_3_of_12 header_image">
-                        <img src="http://localhost/wordpress/wp-content/uploads/2017/11/Toastmasters-Logo-Color-PNG.png" />
+                        <img src={logo != null? logo.source_url : null} />
                     </div>
 
                     {/* Navigation */}

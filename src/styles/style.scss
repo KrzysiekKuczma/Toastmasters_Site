@@ -81,7 +81,7 @@ strong {
 	margin: 0 auto;
 	background-color: $header_background;
 	overflow: visible;
-	z-index: 5;
+	z-index: 15;
 
 	.header_image {
 		position: relative;
@@ -124,6 +124,9 @@ strong {
 	}
 }
 @media screen and (max-width: 768px){
+	.main_content{
+		margin: 3rem auto 3rem auto;
+	}
 	.header_background{
 		position: relative;
    		height: 4rem;
