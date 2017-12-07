@@ -15,7 +15,7 @@ Both are free and add new endpoints to REST API
 
 **Confirguration**
 
-####**Carousel**
+####**Carousel**####
 
 To choose images which will appear in slideshow You need to fill field *caption* with name *carousel* 
 
@@ -27,7 +27,7 @@ The *Alt Text* is also a slogan of a slide
 
 ---
 
-####**Logo**
+####**Logo**####
 To setup Your website logo is similar to carousel:
 
 Write *main_logo* in *caption* field to Your logo image
@@ -36,7 +36,7 @@ Write *main_logo* in *caption* field to Your logo image
 
 ---
 
-####**Menu**
+####**Menu**####
 
 * First You need to install and activate [WP REST API Frontpage](https://wordpress.org/plugins/wp-rest-api-frontpage/) plugin.
 * Next Go to Your *Dashboard* and choose Your menu in *Appearence -> Menus*
