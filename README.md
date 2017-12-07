@@ -1,6 +1,7 @@
-<p style="text-align: center;">
+<p  align="center;">
     <img src="https://github.com/KrzysiekKuczma/Toastmasters_Site/blob/master/readme_screenshots/react_wordpress.png?raw=true" alt="react_wordpress">
 </p>
+
 React Wordpress Theme
 ===
 
