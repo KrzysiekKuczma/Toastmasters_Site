@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -24,9 +25,6 @@ module.exports = {
                 test: /\.(js|jsx)$/, 
                 use: {
                     loader:   "babel-loader",
-                    options: {
-                        presets: ['react', 'stage-2']
-                    }
                 }
             },
             {
@@ -53,6 +51,10 @@ module.exports = {
         }),
         new ExtractTextPlugin({
             filename: 'style.css'
-        })
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production')
+        }),
+        new webpack.optimize.UglifyJsPlugin()
     ] 
 };

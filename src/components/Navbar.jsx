@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, HashRouter, Redirect, NavLink, Switch } from 'react-router-dom';
+import { Router, Route } from 'react-router'
+import { BrowserRouter, HashRouter, NavLink, Switch } from 'react-router-dom';
 
 //Creating navbar with React Router
 
@@ -42,7 +43,6 @@ class Navbar extends React.Component {
 
     render() {
         const logo = this.state.logo;
-        console.log(logo);
         const navbar = this.state.navbar
         return < div className="header_background" >
             <div className="section group">
@@ -61,12 +61,9 @@ class Navbar extends React.Component {
                             <span className="hamburger_spans"></span>
                             <span className="hamburger_spans"></span>
                         </label>
-
-                        <HashRouter>
                             <ul id="menu_pages">
                                 {navbar != null ? this.rendNavbar(navbar.items) : "Loading..."}
                             </ul>
-                        </HashRouter>
                     </nav>
                 </header>
             </div>

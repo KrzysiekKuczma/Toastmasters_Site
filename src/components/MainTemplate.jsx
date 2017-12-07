@@ -2,8 +2,8 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Router } from 'react-router'
-import { HashRouter, BrowserRouter, Redirect, Switch } from 'react-router-dom';
+import { Router, Route } from 'react-router'
+import { HashRouter, BrowserRouter, Switch  } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 //Importing child Components
@@ -34,7 +34,7 @@ class Routing extends React.Component{
         rendPagesRoutes(pages){
             return pages.map((e, ind) => {
                 if (e != ''){
-                    return <Route key={ind} exact path={`/${e.slug}`} pageid={e.id} component={Page} />
+                    return <Route key={ind} exact path={`/${e.slug}`} component={Page} />
                 } else {
                 return null
             }
@@ -45,27 +45,22 @@ class Routing extends React.Component{
     }
     render(){
         return <div>
-            <div className="section group">
-                <div className="col span_12_of_12">
-                    <HashRouter>
-                        <Switch>
-                            <Route exact path='/' component={Carousel} />
-                            <Route exact path='/blog' component={Posts}/>
-                            <Route exact path='/blog/create_post' component={CreatePost} />
-                            <Route path='/blog/:id' component={Post} />
-                            {this.rendPagesRoutes(this.state.pages)}
-                            <Route exact path='*' component={NoPage} />
-                        </Switch>
-                    </HashRouter>
-                </div>
-            </div>
+                <div className="section group">
+                    <div className="col span_12_of_12">
+                        <Route exact path='/' component={Carousel} />
+                        <Route exact path='/blog' component={Posts}/>
+                        <Route exact path='/blog/create_post' component={CreatePost} />
+                        <Route path='/blog/:id' component={Post} />
+                        {this.rendPagesRoutes(this.state.pages)}
+                    </div>
+               </div>
         </div>
     }
 }
 
 class Main extends React.Component{
-constructor(props){
-    super(props)
+    constructor(props){
+        super(props)
         this.state = {
             loggedIn: false
         }
