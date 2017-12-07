@@ -1,5 +1,5 @@
 <p style="text-align: center;">
-    <img alt="react_wordpress">
+    <img src="https://github.com/KrzysiekKuczma/Toastmasters_Site/blob/master/readme_screenshots/react_wordpress.png?raw=true" alt="react_wordpress">
 </p>
 React Wordpress Theme
 ===
@@ -23,8 +23,8 @@ Both are free and add new endpoints to REST API
 * First You need to install and activate [WP REST API Frontpage](https://wordpress.org/plugins/wp-rest-api-frontpage/) plugin.
 * Next Setup your frontpage in ```Dashbord``` -> ```Settings``` -> ```Reading```
 * You should also setup your blog page as well
-!
-[setup frontpage](./readme_screenshots/frontpage_config.png?raw=true "logo config")
+
+![setup frontpage](./readme_screenshots/frontpage_config.png?raw=true "frontpage config")
 
 ### Menu
 
