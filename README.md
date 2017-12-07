@@ -15,15 +15,32 @@ Both are free and add new endpoints to REST API
 
 **Confirguration**
 
-*Carousel*
+####**Carousel**
 
-To choose images which will appear in slideshow You need to fill field 'caption' with name 'carousel' 
+To choose images which will appear in slideshow You need to fill field *caption* with name *carousel* 
 
-in 
-'''"Your_wordpress_site_dashbord" -> "Media" -> "Library" -> "Your_image"'''
+in *"Your_wordpress_site_dashbord" -> "Media" -> "Library" -> "Your_image"*
 
-The 'Alt Text' is also a slogan of a slide
+The *Alt Text* is also a slogan of a slide
 
 ![Choose slide images](https://github.com/KrzysiekKuczma/Toastmasters_Site/blob/master/readme_screenshots/carousel_config.png?raw=true "carousel config")
 
+---
 
+####**Logo**
+To setup Your website logo is similar to carousel:
+
+Write *main_logo* in *caption* field to Your logo image
+
+![Choose logo image](https://github.com/KrzysiekKuczma/Toastmasters_Site/blob/master/readme_screenshots/logo_config.png?raw=true "logo config")
+
+---
+
+####**Menu**
+
+* First You need to install and activate [WP REST API Frontpage](https://wordpress.org/plugins/wp-rest-api-frontpage/) plugin.
+* Next Go to Your *Dashboard* and choose Your menu in *Appearence -> Menus*
+* Set Your menu name to *top* and check *Display location* as *Main Menu*
+
+
+![setup menu](https://github.com/KrzysiekKuczma/Toastmasters_Site/blob/master/readme_screenshots/menu_config.png?raw=true "logo config")
