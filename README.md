@@ -17,13 +17,13 @@ Both are free and add new endpoints to REST API
 
 ### Carousel
 
-To choose images which will appear in slideshow You need to fill field ''' caption ''' with name ''' carousel ''' 
+To choose images which will appear in slideshow You need to fill field *caption* with name *carousel* 
 
-in ''' Your_wordpress_site_dashbord ''' -> ''' Media ''' -> ''' Library ''' -> ''' Your_image '''
+in *Your_wordpress_site_dashbord* -> *Media* -> *Library* -> *Your_image*
 
-The ''' Alt Text ''' is also a slogan of a slide
+The *Alt Text* is also a slogan of a slide
 
-![Choose slide images](https://github.com/KrzysiekKuczma/Toastmasters_Site/blob/master/readme_screenshots/carousel_config.png?raw=true "carousel config")
+![Choose slide images](./readme_screenshots/carousel_config.png?raw=true "carousel config")
 
 ---
 
@@ -32,7 +32,7 @@ To setup Your website logo is similar to carousel:
 
 Write *main_logo* in *caption* field to Your logo image
 
-![Choose logo image](https://github.com/KrzysiekKuczma/Toastmasters_Site/blob/master/readme_screenshots/logo_config.png?raw=true "logo config")
+![Choose logo image](./readme_screenshots/logo_config.png?raw=true "logo config")
 
 ---
 
