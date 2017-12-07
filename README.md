@@ -32,9 +32,9 @@ Both are free and add new endpoints to REST API
 
 To choose images which will appear in slideshow You need to fill field *caption* with name *carousel* 
 
-in *Your_wordpress_site_dashbord* -> *Media* -> *Library* -> *Your_image*
+in `Your_wordpress_site_dashbord` -> `Media` -> `Library` -> `Your_image`
 
-The *Alt Text* is also a slogan of a slide
+The `Alt Text` is also a slogan of a slide
 
 ![Choose slide images](./readme_screenshots/carousel_config.png?raw=true "carousel config")
 
@@ -43,7 +43,7 @@ The *Alt Text* is also a slogan of a slide
 ### Logo
 To setup Your website logo is similar to carousel:
 
-Write *main_logo* in *caption* field to Your logo image
+Write `main_logo` in `caption` field to Your logo image
 
 ![Choose logo image](./readme_screenshots/logo_config.png?raw=true "logo config")
 
@@ -54,18 +54,18 @@ Write *main_logo* in *caption* field to Your logo image
 All colors used in website are written in *src/styles/partials/variables*
 
 ### Blog
-The **Blog** page route is setup to *yourdomain.name/blog*. To change route You should check **MainTemplate** component in *src/compoonents* and change "<Route>" from to *yourdomain.name/yourblogpage*
+The **Blog** page route is setup to *yourdomain.name/blog*. To change route You should check **MainTemplate** component in *src/compoonents* and change `<Route>` from to *yourdomain.name/yourblogpage*
 
-'''
+```
 <Route exact path='/blog' component={Posts}/>
 <Route exact path='/blog/create_post' component={CreatePost} />
 <Route path='/blog/:id' component={Post} />
-'''
+```
 
 to
 
-'''
+```
 <Route exact path='/yourblogpage' component={Posts}/>
 <Route exact path='/yourblogpage/create_post' component={CreatePost} />
 <Route path='/yourblogpage/:id' component={Post} />
-'''
+```
