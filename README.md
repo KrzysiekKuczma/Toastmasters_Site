@@ -11,7 +11,8 @@ This project is used as a Wordpress template made with React and Wordpress REST 
 This is my website template made for toastmasters club in Warsaw.
 [Toastmasters ASBIRO](http://toastmasters.asbiro.pl/)
 
-To Work properly on Your wordpress site You need to install two plugins:
+To Work properly on Your wordpress site You need to install plugins:
+* [WP RESt API](https://wordpress.org/plugins/rest-api/)
 * [WP REST API Frontpage](https://wordpress.org/plugins/wp-rest-api-frontpage/)
 * [WP REST API MENUS](https://wordpress.org/plugins/wp-rest-api-v2-menus/)
 
