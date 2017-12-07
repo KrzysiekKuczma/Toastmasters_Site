@@ -17,14 +17,15 @@
 
 /* IMPORTS */
 
-@import 'partials/__variables.scss';
-@import 'partials/__reset.scss';
-@import 'partials/__carousel.scss';
+@import 'partials/__Variables.scss';
+@import 'partials/__Header.scss';
+@import 'partials/__Reset.scss';
+@import 'partials/__Carousel.scss';
 @import 'partials/__SlideTransitions.scss';
 @import 'partials/__Page.scss';
-@import 'partials/__grid.scss';
-@import 'partials/__createPostForm.scss';
-@import 'partials/__boardPage.scss';
+@import 'partials/__Grid.scss';
+@import 'partials/__CreatePostForm.scss';
+@import 'partials/__BoardPage.scss';
 @import 'partials/__PostsSideBar.scss';
 @import 'partials/__Posts.scss';
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans');
@@ -32,12 +33,13 @@
 
 /* Chris CSS */
 body {
-    background-color: $website_background;
+	background-color: $website_background;
+	color: $basic_text_color;
 }
 
 h1, h2, h3 {
 	font-weight: 700;
-	color: $slide_slogan_color;
+	color: $headers_color;
 }
 
 h1 {
@@ -92,146 +94,9 @@ strong {
 		}
 	}
 }
-.header_background {
-	position: fixed;
-	width: 100%;
-	margin: 0 auto;
-	background-color: $header_background;
-	overflow: visible;
-	z-index: 15;
 
-	.header_image {
-		position: relative;
-		display: block;
-		text-align: center;
-		padding: 0.1%;
-		img {
-			position: absolute;
-			margin: 0 auto;
-			height: 6.2rem;
-			top: 0.5rem;
-			z-index: 10;
-		}
-	}
-}
-
-.nav_active {
-	background-color: $header_active_navlink_color;
-}
-.navbar {
-	#menu_pages {
-		float: right;
-		margin: 0;
-		
-		li {
-			display: inline-block;
-			font-size: 0.8rem;
-			text-align: center;
-			line-height: 3.8rem;
-			a {
-				display: block;
-				width: 6rem;
-				height: 3.8rem;
-				color: $header_navlink_color;
-			}
-		}
-	}
-	#menu_checkbox {
-		display:none;
-	}
-}
 @media screen and (max-width: 768px){
 	.main_content{
 		margin: 3rem auto 3rem auto;
-	}
-	.header_background{
-		position: relative;
-   		height: 4rem;
-	}
-	.navbar {
-
-		#menu_pages {
-			display: block;
-			max-height: 0;
-			overflow: hidden;
-			transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
-			margin: 0;
-			opacity: 0;
-			z-index: 100;
-			right:0;
-			
-			li {
-				height: 3rem;
-				text-align: center;
-				width: 0;
-				overflow: hidden;
-				a {
-					display: block;
-					width: 100%;
-					height: 3rem;
-					line-height: 3rem;
-					font-size: 1rem;
-					border-radius: 0;
-				}
-			}
-		}
-		
-		#menu_checkbox {
-			display: none;
-			position: absolute;
-			visibility: hidden;
-		}
-		label{
-			position: fixed;
-   			z-index: 101;
-			width: 2rem;
-			height: 2rem;
-			top: 1rem;
-			right: 1rem;
-			border: .05rem solid $website_background;
-			border-radius: .2rem;
-			padding: 0.23rem;
-			background-color: $header_background;
-			transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
-			
-		}
-		#menu_checkbox:checked ~ ul#menu_pages {
-			opacity: 1;
-			max-height: 30rem;
-			padding-top: 3rem;
-			width: 100%;
-			background-color: $header_background;
-			top: 0;
-			position: fixed;
-
-			li{
-				width: 100%;
-			}
-		}
-	
-		.hamburger_spans{
-			display: block;
-			position: relative;
-			width: 1.2rem;
-			height: 0.125rem;
-			border-radius: .1rem;
-			margin: .25rem auto;
-			background-color: $website_background;
-		}
-		#hamburger_menu_list {
-			width: 100%;
-		}
-	}
-	.header_background	{
-		.header_image {
-			width: 100%;
-			justify-content: center;
-			height: 1.4rem;
-			padding-top: .5rem;
-			img{
-				position: relative;
-				top: 0;
-			}
-		}	
 	}
 }

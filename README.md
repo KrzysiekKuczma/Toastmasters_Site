@@ -15,6 +15,19 @@ Both are free and add new endpoints to REST API
 
 ## Confirguration
 
+### Menu
+
+* First You need to install and activate [WP REST API MENUS](https://wordpress.org/plugins/wp-rest-api-v2-menus/) plugin.
+* Next Go to Your *Dashboard* and choose Your menu in *Appearence -> Menus*
+* Set Your menu name to *top* and check *Display location* as *Main Menu*
+
+### Start Page 
+
+ First You need to install and activate [WP REST API Frontpage](https://wordpress.org/plugins/wp-rest-api-frontpage/) plugin.
+
+
+
+![setup menu](./readme_screenshots/menu_config.png?raw=true "logo config")
 ### Carousel
 
 To choose images which will appear in slideshow You need to fill field *caption* with name *carousel* 
@@ -36,11 +49,23 @@ Write *main_logo* in *caption* field to Your logo image
 
 ---
 
-### Menu
+### Colors
 
-* First You need to install and activate [WP REST API Frontpage](https://wordpress.org/plugins/wp-rest-api-frontpage/) plugin.
-* Next Go to Your *Dashboard* and choose Your menu in *Appearence -> Menus*
-* Set Your menu name to *top* and check *Display location* as *Main Menu*
+All colors used in website are written in *src/styles/partials/variables*
 
+### Blog
+The **Blog** page route is setup to *yourdomain.name/blog*. To change route You should check **MainTemplate** component in *src/compoonents* and change "<Route>" from to *yourdomain.name/yourblogpage*
 
-![setup menu](./readme_screenshots/menu_config.png?raw=true "logo config")
+'''
+<Route exact path='/blog' component={Posts}/>
+<Route exact path='/blog/create_post' component={CreatePost} />
+<Route path='/blog/:id' component={Post} />
+'''
+
+to
+
+'''
+<Route exact path='/yourblogpage' component={Posts}/>
+<Route exact path='/yourblogpage/create_post' component={CreatePost} />
+<Route path='/yourblogpage/:id' component={Post} />
+'''
