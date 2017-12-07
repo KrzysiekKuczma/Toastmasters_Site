@@ -23,6 +23,6 @@ in '"Your_wordpress_site_dashbord" -> "Media" -> "Library" -> "Your_image"'
 
 The 'Alt Text' is also a slogan of a slide
 
-![Choose slide images](readme_screenshots/carousel_config?raw=true "carousel config")
+![Choose slide images](./readme_screenshots/carousel_config?raw=true "carousel config")
 
 
