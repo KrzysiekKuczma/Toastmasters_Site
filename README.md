@@ -19,7 +19,8 @@ Both are free and add new endpoints to REST API
 
 To choose images which will appear in slideshow You need to fill field 'caption' with name 'carousel' 
 
-in '"Your_wordpress_site_dashbord" -> "Media" -> "Library" -> "Your_image"'
+in 
+'"Your_wordpress_site_dashbord" -> "Media" -> "Library" -> "Your_image"'
 
 The 'Alt Text' is also a slogan of a slide
 
